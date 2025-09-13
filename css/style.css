@@ -1,3 +1,72 @@
+/* Dropdown ORDER ONLINE custom */
+.dropdown-order-online {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle-order {
+    display: inline-block;
+    padding: 8px 18px;
+    font-weight: 600;
+    color: #3c7031;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.dropdown-toggle-order:hover {
+    background: #e6f2e6;
+}
+
+.dropdown-menu-order {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 260px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 0;
+    box-shadow: none;
+    z-index: 100;
+    margin-top: 4px;
+    padding: 0;
+}
+
+.dropdown-toggle-order {
+    padding: 0;
+}
+
+.dropdown-menu-order li a {
+    font-size: 14px;
+}
+
+.dropdown-order-online:hover .dropdown-menu-order {
+    display: block;
+}
+
+.dropdown-menu-order li {
+    list-style: none;
+}
+
+.dropdown-menu-order a {
+    display: block;
+    padding: 10px 18px;
+    color: #2d2d2d;
+    text-decoration: none;
+    border-radius: 0;
+    color: #3c7031;
+    background: none;
+    transition: background 0.2s;
+}
+
+.dropdown-menu-order a:hover {
+    text-decoration: none;
+    background: none;
+}
+
 /* MENU SECTION (the flower filter/search bar) */
 body {
     font-family: "Cormorant Garamond", serif;
@@ -39,6 +108,11 @@ body {
     margin-left: 8px;
     display: flex;
     align-items: center;
+}
+
+.banners-header {
+    font-size: 14px;
+    color: rgb(51, 51, 51);
 }
 
 .search-btn {
@@ -87,7 +161,7 @@ body {
 }
 
 .search-input {
-    height: 20px;
+    height: 28px;
     outline: none;
     font-size: 14px;
     padding-left: 15px;
@@ -174,7 +248,6 @@ body {
     width: 400px;
     height: auto;
     border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(60, 112, 49, 0.10);
 }
 
 .hero-text {
@@ -203,7 +276,6 @@ body {
     font-size: 1.1rem;
     font-weight: bold;
     text-decoration: none;
-    box-shadow: 0 2px 8px rgba(60, 112, 49, 0.10);
     transition: background 0.2s;
 }
 
@@ -235,7 +307,6 @@ body {
     background: #fff;
     padding: 12px 0;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 
@@ -361,7 +432,14 @@ main {
     margin: 2em auto;
     background: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.itemListings-subheaderLink {
+    font-size: 14px;
+    font-weight: 200;
+    text-indent: 2px;
+    text-transform: uppercase;
+    color: rgb(51, 51, 51) !important;
 }
 
 form {
@@ -404,7 +482,6 @@ form button:hover {
     align-items: center;
     gap: 18px;
     background: #f2f2f2;
-    padding: 12px 0 0 0;
 }
 
 .menu-list {
@@ -415,15 +492,42 @@ form button:hover {
     background: #efefef;
 }
 
-.menu-list .menu-item {
+.bar-flower_select {
+    display: block;
+    height: 45px;
+    list-style: none;
+    margin-bottom: 0;
+    max-height: inherit;
+    overflow: hidden;
+    padding-left: 0;
+}
+
+.bar-flower_select>li {
+    display: inline-block;
+}
+
+.bar-flower_select>li>a,
+.bar-helper_text {
+    display: block;
+    font-size: 1em;
+    font-weight: 200;
+    padding: 13px 20px;
+}
+
+.poppick_item a,
+.poppick_item a:active,
+.poppick_item a:visited {
+    color: rgb(41, 51, 51);
+}
+
+.bar-helper_text {
     color: #212427;
-    font-weight: 500;
-    text-decoration: none;
-    padding: 4px 0;
-    border-radius: 0;
-    background: none;
-    transition: color 0.2s;
-    position: relative;
+    float: left;
+    font-size: .8em;
+    font-style: italic;
+    line-height: 1.8em;
+    padding-left: 0;
+    text-transform: uppercase;
 }
 
 .map-container {
@@ -443,7 +547,6 @@ form button:hover {
     margin: 32px auto 24px auto;
     background: #fff;
     border-radius: 14px;
-    box-shadow: 0 2px 16px rgba(60, 112, 49, 0.08);
     padding: 32px 0 32px 0;
     display: flex;
     flex-direction: column;
@@ -468,8 +571,8 @@ form button:hover {
 .contact-phone,
 .contact-email {
     font-family: 'Georgia', serif;
-    font-size: 1.15rem;
-    color: #444;
+    font-size: 12px;
+    color: #333;
     text-align: center;
 }
 
@@ -492,9 +595,7 @@ form button:hover {
 .reviews-box {
     background: #fff;
     border-radius: 18px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     padding: 32px 32px 24px 32px;
-    max-width: 420px;
     margin: 40px auto 0 auto;
 }
 
@@ -502,12 +603,22 @@ form button:hover {
     margin-bottom: 24px;
 }
 
-.reviews-title {
-    font-size: 24px;
-    font-weight: 700;
-    color: #212427;
-    margin: 0;
-    text-align: left;
+.reviews-title,
+.about-us-title,
+.about-owner-title,
+.blomnation-title {
+    font-size: 32px;
+    margin: 0 0 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #3d3d3d
+}
+
+.footer__underline {
+    border-bottom: 1px solid #bbb;
+    height: 1px;
+    margin: 15px auto;
+    width: 75px;
 }
 
 .review-list {
@@ -557,6 +668,10 @@ form button:hover {
     color: #212427;
     margin-left: 8px;
     line-height: 1.5;
+}
+
+.review-show-more a {
+    color: rgb(41, 51, 51);
 }
 
 .about-us {
@@ -612,7 +727,7 @@ form button:hover {
     margin-bottom: 12px;
     padding: 0;
     background: none;
-    color: #3c7031;
+    color: rgb(41, 51, 51);
     border: none;
     border-radius: 0;
     font-size: 15px;
@@ -624,7 +739,7 @@ form button:hover {
 }
 
 .read-more-link:hover {
-    color: #295021;
+    color: rgb(41, 51, 51);
     text-decoration: underline;
 }
 
@@ -635,13 +750,18 @@ form button:hover {
 }
 
 .blomnation-socials {
-    margin-top: 32px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 48px;
+    margin: 50px 0;
+    text-align: center;
 }
 
 .social-item {
+    border-left: 1px solid #eee;
+    margin: 10px 0;
+    padding: 0 40px;
+    width: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -660,14 +780,17 @@ form button:hover {
 
 .social-title {
     font-size: 15px;
-    color: #3c7031;
+    color: #212427;
     font-weight: 500;
     margin-top: 0;
 }
 
+.social-item a {
+    text-decoration: none;
+}
+
 .social-item:hover .social-title {
-    color: #295021;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .social-icon {
@@ -675,6 +798,20 @@ form button:hover {
     font-size: 18px;
     margin-right: 8px;
     vertical-align: middle;
+}
+
+.social__name {
+    color: #333;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.yelp i {
+    color: #c41200;
+}
+
+.instagram i {
+    color: #517fa4;
 }
 
 .about-owner {
@@ -731,7 +868,6 @@ form button:hover {
     gap: 24px;
     background: #fff;
     border-radius: 18px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     padding: 36px 32px;
 }
 
@@ -778,12 +914,11 @@ form button:hover {
     font-size: 15px;
     color: #212427;
     line-height: 1.7;
-    max-width: 220px;
-    box-shadow: none;
     border-radius: 0;
     background: none;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    width: 80%;
 }
 
 .scroll-text-content::-webkit-scrollbar {
@@ -793,15 +928,12 @@ form button:hover {
 .scroll-blocks {
     display: flex;
     justify-content: center;
-    gap: 48px;
     margin: 32px 0;
 }
 
 .scroll-block {
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-    padding: 24px 32px;
     min-width: 320px;
     display: flex;
     flex-direction: column;
@@ -812,7 +944,7 @@ form button:hover {
     display: grid;
     grid-template-columns: 38px 1fr;
     align-items: center;
-    gap: 18px;
+    gap: 36px;
     width: 100%;
     margin-bottom: 18px;
 }
@@ -832,7 +964,7 @@ form button:hover {
 
 .scroll-block-title {
     font-size: 18px;
-    color: #3c7031;
+    color: #3d3d3d;
     font-weight: 700;
     text-align: left;
     min-width: 120px;
@@ -845,14 +977,20 @@ form button:hover {
     font-size: 15px;
     color: #212427;
     line-height: 1.7;
-    max-width: 220px;
     box-shadow: none;
     border-radius: 0;
     background: none;
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
-
+.scroll-text-content {
+    font-size: 12px;
+}
+ .scroll-text-content a {
+    font-weight: bold !important;
+    color: #3d3d3d;
+    text-decoration: none;
+}
 .scroll-text-content::-webkit-scrollbar {
     display: none;
 }
@@ -860,7 +998,6 @@ form button:hover {
 @media (max-width: 900px) {
     .scroll-blocks {
         flex-direction: column;
-        gap: 32px;
         align-items: center;
     }
 
@@ -931,4 +1068,96 @@ form button:hover {
 
 .footer-sep {
     color: #d0d0d0;
+}
+
+.copyright__links {
+    clear: both;
+    font-size: 12px;
+    padding: 15px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.copyright__link {
+    color: #212427;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600 !important;
+    margin: 0 20px;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.copyright__all-rights-reserved {
+    color: #3d3d3d;
+    font-size: 12px;
+    padding-top: 15px;
+}
+
+.footer-social_media {
+    background: var(--bn--light-gray);
+    margin: 60px 0;
+    padding: 25px 0;
+}
+
+.social-innerContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.social_media .row>a {
+    margin: 10px 0;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fa-stack {
+    display: inline-block;
+    height: 2em;
+    line-height: 2em;
+    position: relative;
+    vertical-align: middle;
+    width: 2em;
+}
+
+.social_media i:first-child {
+    color: #fff;
+    font-size: 18px;
+    padding: 0 0 0 3px;
+    z-index: 99;
+}
+
+.social_media i:first-child {
+    color: #fff;
+    font-size: 18px;
+    padding: 0 0 0 3px;
+    z-index: 99;
+}
+
+.poweredbybloomnation {
+    text-align: center;
+}
+
+.member_of_bloomnation {
+    color: rgb(33, 36, 39);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.contact-info-box {
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.footer-infoItem .infoItem-header {
+    font-weight: 600 !important;
+}
+
+.infoItem-text {
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
 }

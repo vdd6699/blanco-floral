@@ -6,6 +6,8 @@
     <title>Blanco Floral</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -31,7 +33,17 @@
         <div class="header-main">
             <nav class="header-nav">
                 <a href="#">SHOP</a>
-                <a href="#">ORDER ONLINE</a>
+                <div class="dropdown-order-online">
+                    <a href="#" class="dropdown-toggle-order">
+                        ORDER ONLINE ▾
+                    </a>
+                    <ul class="dropdown-menu-order">
+                        <li><a href="/order/delivery">Bouquet</a></li>
+                        <li><a href="/order/pickup">Boxes</a></li>
+                        <li><a href="/order/subscription">Vase</a></li>
+                        <li><a href="/order/custom">Bridal Bouquet Collection</a></li>
+                    </ul>
+                </div>
                 <a href="#">WEDDINGS AND EVENTS</a>
                 <a href="#">ABOUT US</a>
                 <a href="#">SUBSCRIPTIONS</a>
@@ -40,31 +52,50 @@
     </header>
     <!-- ...existing code... -->
     <main class="main-hero">
+        <h1 class="banners-header col-xs-12 col-sm-12 col-md-12">Prosper Florist - Blanco Floral</h1>
+        <a href="/prosper-florist-flower-delivery/occasions/fourth-of-july/">
+            <img src="assets/banner-main-page.png" alt="Main Banner" width="1280" height="460"
+                style="display:block;margin:24px auto 0 auto;max-width:100%;border-radius:12px;cursor:pointer;" />
+        </a>
+
+        <h1 class="banners-header mt-4 col-xs-12 col-sm-12 col-md-12">Flower Delivery in Prosper, TX</h1>
         <div class="menu-section">
-            <div class="menu-title-row">
-                <h2 class="menu-title">Browse Designs</h2>
-                <a href="#" class="menu-viewall">SEE ALL FLOWERS <span class="menu-arrow">&#9654;</span></a>
+            <div class="menu-title-row itemListings-subheader col-xs-12 col-sm-12 col-md-12">
+                <h3 class=" itemListings-subheader col-xs-12 col-sm-12 col-md-12">Browse Designs
+                    <div class="clearfix d-block d-sm-none"></div>
+                    <a class="itemListings-subheaderLink" href="/prosper-florist-flower-delivery/">
+                        See all flowers <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </h3>
             </div>
             <div class="menu-bar">
-                <form class="menu-search">
-                    <div class="form-input">
-                        <i class="fa fa-search search-icon" aria-hidden="true"></i>
-                        <input type="text" placeholder="Search Catalog" class="search-input" />
+                <div class="search_bar col-xs-12 col-sm-3 col-md-3">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <form class="menu-search">
+                            <div class="form-input">
+                                <i class="fa fa-search search-icon" aria-hidden="true"></i>
+                                <input type="text" placeholder="Search Catalog" class="search-input" />
+                            </div>
+                            <button type="submit" class="search-btn">Go</button>
+                        </form>
                     </div>
-                    <button type="submit" class="search-btn">Go</button>
-                </form>
-                <span class="menu-browseby">BROWSE BY:</span>
-                <nav class="menu-list">
-                    <a href="#" class="menu-item active">Roses</a>
-                    <a href="#" class="menu-item">Tulips</a>
-                    <a href="#" class="menu-item">Lilies</a>
-                    <a href="#" class="menu-item">Orchids</a>
-                    <a href="#" class="menu-item">Hydrangeas</a>
-                    <a href="#" class="menu-item">Dahlias</a>
-                    <a href="#" class="menu-item">Iris</a>
-                    <a href="#" class="menu-item">Lilac</a>
-                    <a href="#" class="menu-item">Sympathy</a>
-                </nav>
+                </div>
+                <div class="bar-quick_select col-xs-12 col-sm-9 col-md-9 hidden-xs">
+                    <div>
+                        <span class="bar-helper_text">BROWSE BY:</span>
+                        <ul class="bar-flower_select">
+                            <li class="poppick_item"><a href="#" class="menu-item active">Roses</a></li>
+                            <li class="poppick_item"><a href="#" class="menu-item">Tulips</a></li>
+                            <li class="poppick_item"><a href="#" class="menu-item">Lilies</a></li>
+                            <li class="poppick_item"><a href="#" class="menu-item">Orchids</a></li>
+                            <li class="poppick_item"><a href="#" class="menu-item">Hydrangeas</a></li>
+                            <li class="poppick_item"><a href="#" class="menu-item">Dahlias</a></li>
+                            <li class="poppick_item"><a href="#" class="menu-item">Iris</a></li>
+                            <li class="poppick_item"><a href="#" class="menu-item">Lilac</a></li>
+                            <li class="poppick_item"><a href="#" class="menu-item">Sympathy</a></li>
+                            </nav>
+                    </div>
+                </div>
             </div>
         </div>
         <section class="product-list">
@@ -72,45 +103,49 @@
                 <div class="product-item">
                     <img src="assets/flower.avif" alt="Product 1">
                     <div class="product-detail">
-                        <div class="product-name">Bouquet 1</div>
                         <div class="product-price">$39.99</div>
-                            <span class="product-btn"><i class="fa fa-truck" style="margin-right:8px;transform:scaleX(-1);"></i> NEXT-DAY DELIVERY</span>
+                        <div class="product-name">Bouquet 1</div>
+                        <span class="product-btn"><i class="fa fa-truck"
+                                style="margin-right:8px;transform:scaleX(-1);"></i> NEXT-DAY DELIVERY</span>
                     </div>
                 </div>
                 <div class="product-item">
                     <img src="assets/flower.avif" alt="Product 2">
                     <div class="product-detail">
-                        <div class="product-name">Bouquet 1</div>
                         <div class="product-price">$39.99</div>
-                            <span class="product-btn"><i class="fa fa-truck" style="margin-right:8px;transform:scaleX(-1);"></i> NEXT-DAY DELIVERY</span>
+                        <div class="product-name">Bouquet 2</div>
+                        <span class="product-btn"><i class="fa fa-truck"
+                                style="margin-right:8px;transform:scaleX(-1);"></i> NEXT-DAY DELIVERY</span>
                     </div>
                 </div>
                 <div class="product-item">
                     <img src="assets/flower.avif" alt="Product 3">
                     <div class="product-detail">
-                        <div class="product-name">Bouquet 3</div>
                         <div class="product-price">$29.99</div>
-                            <span class="product-btn"><i class="fa fa-truck" style="margin-right:8px;transform:scaleX(-1);"></i> NEXT-DAY DELIVERY</span>
+                        <div class="product-name">Bouquet 3</div>
+                        <span class="product-btn"><i class="fa fa-truck"
+                                style="margin-right:8px;transform:scaleX(-1);"></i> NEXT-DAY DELIVERY</span>
                     </div>
                 </div>
                 <div class="product-item">
                     <img src="assets/flower.avif" alt="Product 4">
                     <div class="product-detail">
-                        <div class="product-name">Bouquet 4</div>
                         <div class="product-price">$49.99</div>
-                            <span class="product-btn"><i class="fa fa-truck" style="margin-right:8px;transform:scaleX(-1);"></i> NEXT-DAY DELIVERY</span>
+                        <div class="product-name">Bouquet 4</div>
+                        <span class="product-btn"><i class="fa fa-truck"
+                                style="margin-right:8px;transform:scaleX(-1);"></i> NEXT-DAY DELIVERY</span>
                     </div>
                 </div>
             </div>
-            <h3>
-                <a href="https://blancofloral.com/prosper-florist-flower-delivery/">
+            <h3 class="itemListings-subheader col-xs-12">
+                <a class="itemListings-subheaderLink float-end" href="/prosper-florist-flower-delivery/">
                     See all flowers <i class=" fa fa-arrow-circle-right"></i>
                 </a>
             </h3>
         </section>
     </main>
     <section id="super-footer">
-        <div >
+        <div>
             <!-- Google Maps Embed -->
             <div class="map-container" style="margin: 40px 0;">
                 <iframe
@@ -121,7 +156,7 @@
             <!-- Contact Info Section -->
             <div class="contact-info-box">
                 <div class="contact-row">
-                    <div class="contact-icon">&#128337;</div>
+                    <img width="36" height="36" loading="lazy" src="assets/icon-hours.svg" alt="presentation">
                     <div class="contact-hours">
                         <div>Monday&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9 AM
                             - 7
@@ -141,18 +176,18 @@
                     </div>
                 </div>
                 <div class="contact-row">
-                    <div class="contact-icon">&#128205;</div>
+                    <img width="31" height="41" loading="lazy" src="assets/icon-address.svg" alt="presentation">
                     <div class="contact-address">
                         Blanco Floral<br>
                         Serving the Greater Prosper Area Prosper, TX, 75078
                     </div>
                 </div>
                 <div class="contact-row">
-                    <div class="contact-icon">&#128222;</div>
+                    <img width="35" height="35" loading="lazy" src="assets/icon-phone.svg" alt="presentation">
                     <div class="contact-phone">(469) 882-5123</div>
                 </div>
                 <div class="contact-row">
-                    <div class="contact-icon">&#9993;</div>
+                    <img width="36" height="26" loading="lazy" src="assets/icon-email.svg" alt="presentation">
                     <div class="contact-email">hanglechihi@gmail.com</div>
                 </div>
             </div>
@@ -160,6 +195,7 @@
             <div class="reviews-box">
                 <div class="reviews-title-row">
                     <h2 class="reviews-title">Most Recent Reviews</h2>
+                    <div class="footer__underline"></div>
                 </div>
                 <div class="review-list">
                     <div class="review-item">
@@ -168,11 +204,19 @@
                             <span class="star">★</span><span class="star">★</span><span class="star">★</span><span
                                 class="star">★</span><span class="star">★</span>
                         </span>
-                        <span class="review-date">Sep 7, 2025</span>
-                        <span class="review-text">The flowers were absolutely beautiful and delivery was on
-                            time. Highly recommend Blanco Floral!</span>
+                        <time class="review-date">
+                            <span role="presentation" aria-hidden="true">
+                                04-09-2025 </span>
+                        </time>
+                        <div>
+                            <span class="review-text">The flowers were absolutely beautiful and delivery was on
+                                time. Highly recommend Blanco Floral!</span>
+                        </div>
                     </div>
-                    <!-- Có thể thêm nhiều review-item khác nếu muốn -->
+                    <div class="review-show-more text-center">
+                        <a href="/florist/blanco-floral/reviews/">
+                            See More Reviews </a>
+                    </div>
                 </div>
             </div>
             <div class="about-us">
@@ -181,6 +225,8 @@
                         <div class="about-us-title">
                             <h2>About Us</h2>
                         </div>
+                        <div class="footer__underline"></div>
+
                         <div class="about-us-body">
                             <p>
                                 Welcome to Blanco floral - Your Local Home-Based Flower Shop!<br>
@@ -239,7 +285,7 @@
                     </div>
                     <div class="about-us-fade" style="display:none;"></div>
                     <a href="#" class="read-more-link" style="display:none;">
-                        Read More <span class="arrow-icon">&#8594;</span>
+                        Read More <i class="fa fa-arrow-right" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -248,6 +294,7 @@
                     <div class="about-owner-title">
                         <h2>Stella Nguyen</h2>
                     </div>
+                    <div class="footer__underline"></div>
                     <div class="about-owner-body">
                         <p>As the Head Florist Designer at Blanco Floral, Stella brings a wealth of experience
                             and a passion for floral artistry to every arrangement created. With over [number]
@@ -263,6 +310,7 @@
             <div class="blomnation-container">
                 <div class="blomnation-info">
                     <h2 class="blomnation-title">Blomnation</h2>
+                    <div class="footer__underline"></div>
 
                     <div class="blomnation-img-wrap">
                         <img class="blomnation-img" src="assets/bloomnationLogo.svg" alt="Blomnation" width="160"
@@ -273,88 +321,421 @@
 
                     <div class="blomnation-socials">
                         <div class="social-item">
-                            <div class="social-svg">
-                                <!-- Facebook SVG -->
-                                <svg width="38" height="38" viewBox="0 0 24 24" fill="#3c7031"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M22.675 0h-21.35C.595 0 0 .594 0 1.326v21.348C0 23.406.595 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.406 24 22.674V1.326C24 .594 23.406 0 22.675 0z" />
-                                </svg>
-                            </div>
-                            <div class="social-title">Facebook</div>
+                            <a href="https://www.facebook.com/410054315534167" target="_new"
+                                class="facebook social__icon-link">
+                                <i class="fa fa-facebook"></i>
+                                <br>
+                                <span class="social__name">Facebook</span>
+                            </a>
                         </div>
                         <div class="social-item">
-                            <div class="social-svg">
-                                <!-- Instagram SVG -->
-                                <svg width="38" height="38" viewBox="0 0 24 24" fill="#3c7031"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.974-.974 2.241-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.771.131 4.659.363 3.678 1.344c-.981.981-1.213 2.093-1.272 3.374C2.013 5.741 2 6.151 2 12c0 5.849.013 6.259.072 7.539.059 1.281.291 2.393 1.272 3.374.981.981 2.093 1.213 3.374 1.272C8.332 23.987 8.741 24 12 24s3.668-.013 4.948-.072c1.281-.059 2.393-.291 3.374-1.272.981-.981 1.213-2.093 1.272-3.374.059-1.28.072-1.69.072-7.539 0-5.849-.013-6.259-.072-7.539-.059-1.281-.291-2.393-1.272-3.374-.981-.981-2.093-1.213-3.374-1.272C15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
-                                </svg>
-                            </div>
-                            <div class="social-title">Instagram</div>
+                            <a href="https://www.instagram.com/blanco.floral" target="_new"
+                                class="instagram social__icon-link">
+                                <i class="fa fa-instagram"></i>
+                                <br>
+                                <span class="social__name">Instagram</span>
+                            </a>
                         </div>
                         <div class="social-item">
-                            <div class="social-svg">
-                                <!-- Yeph SVG (star icon) -->
-                                <svg width="38" height="38" viewBox="0 0 24 24" fill="#3c7031"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                </svg>
-                            </div>
-                            <div class="social-title">Yeph</div>
+                            <a href="https://www.yelp.com/biz/blanco-floral-prosper" target="_new"
+                                class="yelp social__icon-link">
+                                <i class="fa fa-star"></i>
+                                <br>
+                                <span class="social__name">Yelp</span>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="scroll-blocks">
-            <div class="scroll-block">
+            <div class="scroll-block col-6">
                 <div class="scroll-block-row">
                     <div class="scroll-block-icon">
-                        <!-- Flower SVG icon -->
-                        <svg width="38" height="38" viewBox="0 0 24 24" fill="#3c7031"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12 2C13.1046 2 14 2.89543 14 4V6C14 7.10457 13.1046 8 12 8C10.8954 8 10 7.10457 10 6V4C10 2.89543 10.8954 2 12 2ZM4 10C2.89543 10 2 10.89543 2 12C2 13.1046 2.89543 14 4 14H6C7.10457 14 8 13.1046 8 12C8 10.8954 7.10457 10 6 10H4ZM20 10C18.8954 10 18 10.8954 18 12C18 13.1046 18.8954 14 20 14H22C23.1046 14 24 13.1046 24 12C24 10.8954 23.1046 10 22 10H20ZM12 16C13.1046 16 14 16.8954 14 18V20C14 21.1046 13.1046 22 12 22C10.8954 22 10 21.1046 10 20V18C10 16.8954 10.8954 16 12 16ZM7.75736 7.75736C8.51284 8.51284 8.51284 9.73716 7.75736 10.4926L6.34315 11.9068C5.58768 12.6623 4.36336 12.6623 3.60789 11.9068C2.85241 11.1513 2.85241 9.92698 3.60789 9.17151L5.0221 7.75736C5.77757 7.00189 7.00189 7.00189 7.75736 7.75736ZM16.2426 7.75736C17.0019 7.00189 18.2262 7.00189 18.9817 7.75736L20.3959 9.17151C21.1514 9.92698 21.1514 11.1513 20.3959 11.9068C19.6404 12.6623 18.4161 12.6623 17.6606 11.9068L16.2464 10.4926C15.4909 9.73716 15.4909 8.51284 16.2464 7.75736ZM7.75736 16.2426C7.00189 17.0019 5.77757 17.0019 5.0221 16.2426L3.60789 14.8284C2.85241 14.0729 2.85241 12.8486 3.60789 12.0931C4.36336 11.3376 5.58768 11.3376 6.34315 12.0931L7.75736 13.5073C8.51284 14.2628 8.51284 15.4871 7.75736 16.2426ZM16.2426 16.2426C15.4871 15.4871 15.4871 14.2628 16.2426 13.5073L17.6569 12.0931C18.4123 11.3376 19.6366 11.3376 20.3921 12.0931C21.1476 12.8486 21.1476 14.0729 20.3921 14.8284L18.9779 16.2426C18.2224 17.0019 17.0019 17.0019 16.2426 16.2426Z" />
-                        </svg>
+                        <img width="84" height="76" loading="lazy" class="delivery__icon" src="assets/icon-delivery.svg"
+                            alt="">
                     </div>
-                    <div class="scroll-block-title">Block Title 1</div>
+                    <div class="scroll-block-title">Where We Deliver</div>
                 </div>
                 <div class="scroll-text-content">
-                    <!-- Nội dung text dài cho block 1 -->
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt
-                    consectetur, nisi nisl aliquam enim, eu aliquam enim nisi euismod urna. Etiam euismod, urna eu
-                    tincidunt consectetur, nisi nisl aliquam enim, eu aliquam enim nisi euismod urna.
-                    <br><br>
-                    (Thêm nội dung dài để test scroll)
+                    <p>
+
+                        We are Blanco Floral and we are a real local florist in Prosper, TX.
+                        We also provide flower delivery to the surrounding areas, such as, Addison, Allen, Alvord, Anna,
+                        Argyle, Arlington, Aubrey, Azle, Bailey, Balch Springs, Bedford, Bells, Blue Ridge, Bonham,
+                        Boyd, Caddo Mills, Carrollton, Cartwright, Cedar Hill, Celeste, Celina, Colbert, Colleyville,
+                        Collinsville, Copeville, Coppell, DFW, Dallas, Decatur, Denison, Denton, Desoto, Duncanville,
+                        Ector, Era, Euless, Farmersville, Fate, Flower Mound, Forestburg, Forney, Fort Worth, Frisco,
+                        GTE, Gainesville, Garland, Gober, Gordonville, Grand Prairie, Grapevine, Greenville, Greenwood,
+                        Gunter, Haltom City, Haslet, Howe, Hurst, Hutchins, Irving, Josephine, Justin, Keller, Kemp,
+                        Kennedale, Kingston, Krum, LSI, Lake Dallas, Lancaster, Lavon, Leonard, Lewisville, Lindsay,
+                        Little Elm, Mansfield, Mckinney, Melissa, Merit, Mesquite, Muenster, Myra, NAS/JRB, Naval Air
+                        Station/ Jrb, Nevada, Newark, North Richland Hills, Pilot Point, Plano, Platter, Ponder,
+                        Pottsboro, Princeton, Prosper, Quinlan, Randolph, Ravenna, Red Oak, Rhome, Richardson, Roanoke,
+                        Rockwall, Rosston, Rowlett, Royse City, SBC ATT, Sachse, Sadler, Sanger, Savoy, Seagoville,
+                        Sherman, Slidell, Southlake, Southmayd, Sunnyvale, Terrell, Thackerville, The Colony, Tioga, Tom
+                        Bean, Trenton, Valley View, Van Alstyne, Westminster, Weston, Whitesboro, Whitewright, Wilmer,
+                        Wolfe City, Wylie.
+                        <br><br>
+                        Our customers love us because we always deliver the freshest blooms on time. It’s because we
+                        have the very best drivers who know the ins and outs of Prosper.
+                        <br><br>
+                        Ordering flowers and picking the right arrangement can be challenging especially for
+                        <a href="https://blancofloral.com/prosper-florist-flower-delivery/occasions/valentine-s-day">Valentine’s
+                            Day</a> or
+                        <a href="https://blancofloral.com/prosper-florist-flower-delivery/occasions/mother-s-day">Mother’s
+                            Day</a>
+                        We cover all kinds of occasions where it’s a fall, winter, summer, spring, or other holiday.
+                        We also specialize in
+                        <a
+                            href="https://blancofloral.com/prosper-florist-flower-delivery/occasions/anniversary">anniversary</a>,
+                        <a
+                            href="https://blancofloral.com/prosper-florist-flower-delivery/occasions/birthday">birthday</a>,
+
+                        <a href="https://blancofloral.com/prosper-florist-flower-delivery/occasions/get-well">get well
+                            flowers </a>
+
+                        , but we also have everyday flowers if you just want something to decorate your home or
+                        <a href="https://blancofloral.com/prosper-florist-flower-delivery/occasions/just-because">just
+                            because</a>.
+                        At Blanco Floral has a <a href="https://blancofloral.com/prosper-florist-flower-delivery/">wide
+                            selection of floral designs</a>
+                        and we take care to deliver the very best fresh flowers.
+                        <br><br>
+                        We know funerals and sympathy life events are difficult to express the right emotions. Blanco
+                        Floral has a good number of
+                        <a
+                            href="https://blancofloral.com/prosper-florist-flower-delivery/occasions/sympathy-and-funeral">funeral
+                            arrangements and sympathy flowers</a>
+                        so you can always send your kindest condolences.<br><br>
+                        Ordering flowers online is easy with our website and our flower shop prides itself in creating
+                        gorgeous floral arrangements using only the freshest flowers sourced from the best flower
+                        growers in the world. We even carry hard to find seasonal flowers like
+                        <a
+                            href="https://blancofloral.com/prosper-florist-flower-delivery/flower/ranunculus">ranunculus</a>,
+                        <a href="https://blancofloral.com/prosper-florist-flower-delivery/flower/dahlias">dahlias</a>,
+                        that can be perfect for weddings.
+                        Of course, we have all types of flowers like your everyday dozen
+                        <a
+                            href="https://blancofloral.com/prosper-florist-flower-delivery/flower/sunflowers">sunflowers</a>,
+                        <a
+                            href="https://blancofloral.com/prosper-florist-flower-delivery/flower/hydrangea">hydrangea</a>,
+                        too.
+                        Even if you’re not looking for your traditional bouquets, we also carry
+                        <a
+                            href="https://blancofloral.com/prosper-florist-flower-delivery/flower/succulents">succulents</a>,
+                        <a href="https://blancofloral.com/prosper-florist-flower-delivery/flower/orchids">orchids</a>,
+                        <a href="https://blancofloral.com/prosper-florist-flower-delivery/flower/lilies">lilies</a>.
+                        <br><br>
+                        Surprise your loved ones with a unique design and fresh fragrant flowers for any special
+                        occasion.
+                        Send flowers right from our online catalog to make sure you send the right gift and/or the right
+                        bouquet to surprise someone special.
+                        Whether it is a get well flower gift basket, Mother's Day flowers, seasonal centerpiece for the
+                        holidays or something that says
+                        "I love you" Blanco Floral is the leading <a
+                            href="https://www.bloomnation.com/shop/prosper-tx/flower-delivery/">florist in
+                            Prosper, TX</a> and will make sure to send quality flowers in a stunning arrangement.
+                    </p>
                 </div>
             </div>
-            <div class="scroll-block">
+            <div class="scroll-block col-6">
                 <div class="scroll-block-row">
                     <div class="scroll-block-icon">
-                        <!-- Flower SVG icon -->
-                        <svg width="38" height="38" viewBox="0 0 24 24" fill="#3c7031"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12 2C13.1046 2 14 2.89543 14 4V6C14 7.10457 13.1046 8 12 8C10.8954 8 10 7.10457 10 6V4C10 2.89543 10.8954 2 12 2ZM4 10C2.89543 10 2 10.89543 2 12C2 13.1046 2.89543 14 4 14H6C7.10457 14 8 13.1046 8 12C8 10.8954 7.10457 10 6 10H4ZM20 10C18.8954 10 18 10.8954 18 12C18 13.1046 18.8954 14 20 14H22C23.1046 14 24 13.1046 24 12C24 10.8954 23.1046 10 22 10H20ZM12 16C13.1046 16 14 16.8954 14 18V20C14 21.1046 13.1046 22 12 22C10.8954 22 10 21.1046 10 20V18C10 16.8954 10.8954 16 12 16ZM7.75736 7.75736C8.51284 8.51284 8.51284 9.73716 7.75736 10.4926L6.34315 11.9068C5.58768 12.6623 4.36336 12.6623 3.60789 11.9068C2.85241 11.1513 2.85241 9.92698 3.60789 9.17151L5.0221 7.75736C5.77757 7.00189 7.00189 7.00189 7.75736 7.75736ZM16.2426 7.75736C17.0019 7.00189 18.2262 7.00189 18.9817 7.75736L20.3959 9.17151C21.1514 9.92698 21.1514 11.1513 20.3959 11.9068C19.6404 12.6623 18.4161 12.6623 17.6606 11.9068L16.2464 10.4926C15.4909 9.73716 15.4909 8.51284 16.2464 7.75736ZM7.75736 16.2426C7.00189 17.0019 5.77757 17.0019 5.0221 16.2426L3.60789 14.8284C2.85241 14.0729 2.85241 12.8486 3.60789 12.0931C4.36336 11.3376 5.58768 11.3376 6.34315 12.0931L7.75736 13.5073C8.51284 14.2628 8.51284 15.4871 7.75736 16.2426ZM16.2426 16.2426C15.4871 15.4871 15.4871 14.2628 16.2426 13.5073L17.6569 12.0931C18.4123 11.3376 19.6366 11.3376 20.3921 12.0931C21.1476 12.8486 21.1476 14.0729 20.3921 14.8284L18.9779 16.2426C18.2224 17.0019 17.0019 17.0019 16.2426 16.2426Z" />
-                        </svg>
+                        <img width="80" height="80" loading="lazy" class="delivery__icon"
+                            src="assets/icon-neighborhoods.svg" alt="">
                     </div>
-                    <div class="scroll-block-title">Block Title 2</div>
+                    <div class="scroll-block-title">Neighborhoods, Cities, ZIP Codes</div>
                 </div>
                 <div class="scroll-text-content">
-                    <!-- Nội dung text dài cho block 2 -->
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                    laudantium,
-                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                    dicta sunt explicabo.
-                    <br><br>
-                    (Thêm nội dung dài để test scroll)
+                    <p>Addison, Allen, Alvord, Anna, Argyle, Arlington, Aubrey, Azle, Bailey, Balch Springs, Bedford,
+                        Bells, Blue Ridge, Bonham, Boyd, Caddo Mills, Carrollton, Cartwright, Cedar Hill, Celeste,
+                        Celina, Colbert, Colleyville, Collinsville, Copeville, Coppell, DFW, Dallas, Decatur, Denison,
+                        Denton, Desoto, Duncanville, Ector, Era, Euless, Farmersville, Fate, Flower Mound, Forestburg,
+                        Forney, Fort Worth, Frisco, GTE, Gainesville, Garland, Gober, Gordonville, Grand Prairie,
+                        Grapevine, Greenville, Greenwood, Gunter, Haltom City, Haslet, Howe, Hurst, Hutchins, Irving,
+                        Josephine, Justin, Keller, Kemp, Kennedale, Kingston, Krum, LSI, Lake Dallas, Lancaster, Lavon,
+                        Leonard, Lewisville, Lindsay, Little Elm, Mansfield, Mckinney, Melissa, Merit, Mesquite,
+                        Muenster, Myra, NAS/JRB, Naval Air Station/ Jrb, Nevada, Newark, North Richland Hills, Pilot
+                        Point, Plano, Platter, Ponder, Pottsboro, Princeton, Prosper, Quinlan, Randolph, Ravenna, Red
+                        Oak, Rhome, Richardson, Roanoke, Rockwall, Rosston, Rowlett, Royse City, SBC ATT, Sachse,
+                        Sadler, Sanger, Savoy, Seagoville, Sherman, Slidell, Southlake, Southmayd, Sunnyvale, Terrell,
+                        Thackerville, The Colony, Tioga, Tom Bean, Trenton, Valley View, Van Alstyne, Westminster,
+                        Weston, Whitesboro, Whitewright, Wilmer, Wolfe City, Wylie</p>
                 </div>
             </div>
         </div>
-    
+
+
+        <div class="scroll-blocks">
+            <div class="scroll-block col-6">
+                <div class="scroll-block-row">
+                    <div class="scroll-block-icon">
+                        <img width="80" height="80" loading="lazy" class="delivery__icon" src="assets/icon-hospital.svg"
+                            alt="">
+                    </div>
+                    <div class="scroll-block-title">Local Hospitals</div>
+                </div>
+                <div class="scroll-text-content">
+                    <p>Hospitals we deliver to: 1 Day At A Time, 24 Hour Emergency Room, 4 Out of 5 Doctors, A &amp; A
+                        Computer Services, A Weekend to Wipe Out Cancer, A/R Connection Inc, AT&amp;T -Activation &amp;
+                        New Sales, Abortion Centers of America, Acquired Education &amp; Health, Acute Surgical Care
+                        Spclsts, Advanced Internal Medicine Rhd Hospital, Advanced Medical Alliance, Inc., Advanced
+                        Vascular Surgery of Arlington P, Alliance Ambulatory Infusion Center, Alliance Surgery, Alsac,
+                        Alsac St Jude, Alsac St Judes, Alsac/ Saint Jude Research, Alumni Assoc Of St Pauls, AmSurg,
+                        Ambulatory Surgical Center Ltd., American Nursing Services, Arlington Day Surgery Center,
+                        Arlington Memorial Hospital, Arlington Memorial Imaging, Arlington Plastic Surgery PA, Authentic
+                        Medical Personnel Service, Bariatric Surgery Ctr-Dallas, Barix Clinics of Texas, Barker
+                        Bariatric Center, Baylor All Saints Hospital, Baylor All Saints Hospital Transplant Housing,
+                        Baylor Hospital, Baylor Medical Center, Baylor Medical Center At Mckinney, Baylor Regional
+                        Medical Center At, Baylor Surgecare At Arlington, Baylor Surgicare At Rockwall, Baylor
+                        Surgicare-Grapevine, Baylor University Medical Center, Baylor University Medical Ctr, Behavioral
+                        Medicine, Behavioral Medicine Center At Garland Community Hospital, Blood And Transplant Program
+                        Center, Blue Mound Hosp, Bob's Hospital, CPM Medical, Calloway Creek Surgery Center, Capital
+                        Hospitality Group Inc, Cardio-Diagnostic Soundwa, Cardiothoracic Surgical Assoc, Caremedic
+                        Systems Inc, Careunit Hospital Of Dallas Ft Worth, Careunit Hospital Program, Careunit Hospital
+                        Program Memorial Hospital Of Garland, Cater-Medic, Center For Aesthetic Surgery, Central Park
+                        Ear Nose &amp; Throat, Centro De Restauracion Familiar, Charles E Graham Md Pa, Child Medical
+                        Center, Children's And Presbyterian Health Care Center Of North Texas, Children's Medical
+                        Center, Children's Medical Ctr, Children's Medical Ctr-Legacy, Childrens Hospital, Childrens
+                        Hospital Servic, Clay County Meml Hosp-Hnrttt, Clear Fork Surgery Center, Cndi, Collins
+                        Hospital, Columbia Medical Center Plano, Columbia Medical Center of McKinney, Columbia North
+                        Irving, Community Hospital of Mesquite, Comprehensive Community Care Inc, Comprehensive Nursing
+                        Services, Conifer Health Solutions, Continuecare Hospital Of South, Contract Medical Staffing,
+                        Cook Children's, Cook Children's Behavioral, Cook Children's Hospital, Cook Children's Multi,
+                        Cook Children's Neighborhood Clinic, Cook Children's Phys Network, Cook Children's Psychiatry,
+                        Cook Children's Rehabilitation, Cook Childrens, Cook Childrens Hospital, Cook Childrens
+                        Infectious Dis, Cook Childrens Morris Ctr-Hlth, Cook Childrens Surgery Ctr, Creative Focus By
+                        Two Gutsy, Csh North Richland, D &amp; D Medical Staffing, DFW Skin Surgery Ctr, DHC Memorial,
+                        DNA Vascular Access Surgical, Dallas County Hospital, Dallas County Hospital District, Dallas
+                        Medical Hospital, Dallas Ophthalmology Surgery, Dallas Opthalmology Surgery, Dalllas Va
+                        Hospital, Denison Hospital Authority, Denton Regional Medical Ctr, Desoto Animal Hosp, Dfw
+                        Arthritis Associate, Dfw Surgical, Distribution, Dls Co Vet Hosp, Doctors Hospital, Doctors
+                        Hospital Diabetes Center, Doctors Hospital of Shreveport, EDS Baylor Heath Care, Eai Medical
+                        Personnel Ser, Emergency Department, Employer Direct, Endoscopy Center, Endoscopy Center At
+                        Central Pk, Ethicus Healthcare Mgmt, Ethicus Hospital, Exact Surgical Texas, Excel Inc, Flower
+                        Mound Veterinary Hosp, Fort Worth Surgery Ctr, From Heart Childrens Fndtn, Garland Community
+                        Hospital, Garland Spine Ctr, Gaston Episcopal Hosp Fndtn, Gentle Birth Companions, Glen Oaks
+                        Hospital, Globex Travel Health Inc, Gould Martine A MS, Gp Prevarian Hospital Partners,
+                        Grapevine Neurosurgery, Greenville Surgery Ctr, Gulf States Ltac Of Dallas South, Gupta Manish
+                        MD, Harris Center Heb, Harris Continued Care Hospital, Harris Hospital Data Center, Harris
+                        Hospital H E B, Harris Methodist Contd Care, Harris Methodist H E B Hospital, Harris Methodist
+                        Heb Hospital, Harris Methodist Heb Hospital Hospital, Hca Lewisville Hospital, Hca-Hospital
+                        Corporation Of America (Inc), Health Net Va Primary Careclinic, Health Specialist Services Inc,
+                        Health Texas Provider Network, HealthSouth, Healthsouth, Hellmut F Tauber, Highland Park Plastic
+                        Surgery, Hospital, Hospital Care Assoc, Hospital Care Consultants Inc, Hospital Consultants,
+                        Hospital Resource Mgmt, Hospital Services, Hospital Support Services LTD, Huguley Hospital, Hunt
+                        Memorial Hospital District, I H S Hospital At Dallas, I Ride Motorsports Inc, Infectious
+                        Diseases Division, Integra Hospital Plano, Intelistaf Healthcare, Irving Coppell Surgical
+                        Hospital, John Peter Smith Health Ntwrk, John Peter Smith Hospital, Jones Lannie, Jonsson
+                        Hospital, K Assoc, Keller Ortho Pain &amp; Spine, Kenner Regional Medical Center, Inc, Keystone
+                        Medical Man, Kindred, Kindred Hospital Dallas, Kindred Hospital-White Rock, Kristeen Grmela, LHP
+                        Hospital, Labor &amp; Delivery, Lalliers Home Health Services, Lancaster Regional Hospital,
+                        Legacy Hospital Partners Inc, Life Center Specialtiy Hosp, Lifecare Hospitals of Dallas,
+                        Lifemark Hospitals, Inc, Lipshy Zale University Hosp, Lit Surgical, Lone Star Surgical Center
+                        LLP, Ltac Partners of America, Mansfield Surgical Ctr, Marshall Memorial Hospital, Mary Shiels
+                        Hospital, McAllen Medical Center, McKinney Surgery Center, Mecc, Medical Center Of Lewisville
+                        Rehabilitation Center, Medical Center-Mckinney, Medical City Children's Hsptl, Medical City
+                        Childrens Hospital, Medical City Dallas Hospital, Medical City Medical City Childrens Hospital,
+                        Medical Staffing Solution A, Medical Village Surgery Center, Mediserv, Medline Medical Staffing,
+                        Medveda Inc, Memorial Hospital of Garland, Memphis Specialty Hospital, Inc, Meridian Hospital
+                        Systems Corp, Meridian Surgical Partners, Mesquite Community Hospital, Methodist Richardson
+                        Medical Center Foundation, Inc., Metro Hospital, Metrocrest Hospital Authority, Mid Life,
+                        Millwood Hospital, Minor Emergency of Denton, Morton Gc Hospital At Bloodcare, Moslah Hospital
+                        Fund, Muenster Memorial Hospital, Nanas Lactation Helps, National Surgical Care, No Me Not
+                        Productions, North American Hospital, North Dallas Surgery Center, North Dallas Surgicare, North
+                        Garland Surgery Center, North Hills Hosp Senior Hlth, North Hills Hospital, North Texas Hospital
+                        For Children, North Texas Medical Center, North Travis Ambulatory Surg, Nucardio Ii, Ornda
+                        Hospital Corp, Orndorff Medical Services, Our Lady of Victory Center Arlington, P A Ecsc Ii, P N
+                        H, PSI Hickory Trail Hospital, PSI Hickory Trail Hosptial, Padron Wellness Clinic TP, Paragon
+                        Surgical Assistants, Park Cities Surgery, Parkland Health &amp; Hosital System Health Centers,
+                        Parkland Health &amp; Hospital Sys, Parkland Health &amp; Hospital System, Parkland Health &amp;
+                        Hospital Systems, Parkland Health And Hospital System, Parkland Health Systems, Parkland
+                        Hospital, Parkland Memorial Hospital, Parkland Simmons Ambulatory Surgery Center, Patients R Us,
+                        Pediatric Surgical Assoc, Peterson Memorial Baptist Church, Phoenix Childrens Academy,
+                        Physicians Regional Hospital, Plano Specialty Clinic, Plano Specialty Hospital, Plano Surgery
+                        Center, Plano Therapy Clinic, Plaza Specialty Hospital, Post Acute Services, Precision Surgery
+                        Center of Dallas, Preferred Medical Staffing, Premier Ambulatory Surgery, Premier Surgery Ctr,
+                        Prentiss Enterprises, Presbyterian Hospital, Presbyterian Hospital Dallas, Presbyterian Hospital
+                        of Allen, Presbyterian Hospital of Dalla, Presbyterian Hospital of Dallas Patient Information,
+                        Presbyterian Hospital of Dallas The Departments Listed Below, Presbyterian Hospital of
+                        Greenville, Presbyterian Hospital of Kaufman, Presbyterian Of Allen, Preston Hollow Surgical
+                        Center, Preston Plaza Surgery Ctr, Prevarian Hospital Partners LP, Prime Surgical Services,
+                        Prybt Hosp Alle, RHD Memorial Medical Ctr, Ravkind Brett R, Real Local Pages - Hospitals,
+                        Regency Hospital of Carrolton, Reliant Hospital Partners, Renaissance Hospital, Renard, Thomas,
+                        Md - Pediatric Surgical Assoc, Renfrew Center, Resource Medical Staffing LLC, Rhd Centralized
+                        Scheduling, Robert Ballard, Roberts Hospital, Rockwall Hospital, Rockwall Medical Ctr, Rockwall
+                        Regional Hospital Llp, Rockwall Surgery Center, Rose Medical Center, Royse City Hospitality,
+                        Rural Heart Centers Of Texas, Saenz Javier, Schick Hospital, Schick Shadel Hospital, Select
+                        Physical Therapy, Select Specialty Hospital, Senior Med Alliance Inc, Senior Tmc Health Center,
+                        Shannon Wyrick Creative Memor, Shelley Thurman Creative Memor, Shreveport Doctors Hospital 2003
+                        Ltd, Signature Hospital Lec, Simple LTC, Southern Baptist - Memorial, Southwest Surgery Center,
+                        Specialty Surgical Ctr, Sports &amp; Industry Care Ctr, St Jude Children, St Jude Children's
+                        Research Hospital/Alsac Toll Free Dial 1 &amp; Then, St Jude Childrens Hospital, Stephen Breen
+                        Meml Foundation, Stonebridge Surgery Center, Surgery Center At Craig Ranch, Surgery Center Of
+                        Arlington, Surgery Center of Dallas, Surgical Care Affiliates, Surgical Institute Plano, Susan
+                        Allen, Tarrant County Hospital, Tarrant County Surgery Ctr, Tenet, Tenet Doctors Hospital,
+                        Terrell State Hospital, Texas Endoscopy, Texas General Hospital, Texas Health Arlington Memorial
+                        Hospital, Texas Health Convenient Care Alliance, Texas Health Harris Hospital Azle - Main Street
+                        Site, Texas Health Harris Methodist Hospital, Texas Health Harris Methodist Hospital Alliance,
+                        Texas Health Harris Methodist Hospital Azle, Texas Health Harris Methodist Hospital Department
+                        Listing, Texas Health Harris Methodist Hospital Euless-Bedford, Texas Health Harris Methodist
+                        Hospital Fort Department Listing, Texas Health Harris Methodist Hospital Fort Worth, Texas
+                        Health Harris Methodist Hospital Fort Worth Department Listing, Texas Health Harris Methodist
+                        Hospital Hurst-Euless-Bedford, Texas Health Presbyterian Hospital Allen, Texas Health
+                        Presbyterian Hospital Dallas, Texas Health Presbyterian Hospital Denton, Texas Health
+                        Presbyterian Hospital Rockwall, Texas Health Presbyterian Hospital-Wnj, Texas Health Resources,
+                        Texas Health Women's Specialty Surgery Center, Texas Medical Weight Loss Clinic, Texas Scottish
+                        Rite Hospital for Children, Texoma Healthcare, Texoma Hospital Partners, Texoma Valley Surgery
+                        Ctr, The Awakening Group, The Banfield Hospital, The Hospital and Medical Office At Craig Ranch,
+                        The Nonprofit Hospital Corporation, Thresa Medical Fort Worth Hospital, Timberlawn Mental Health
+                        System, Touch Fellowship, Inc, Trans American Ems, Triad Hospital, Triad Hospitals, Trinity
+                        Medical Staffing, Trinity Park Surgery Center, Triumph Hospital, Triumph Hospital Dallas,
+                        Triumph Hospital of Dallas, True Guardian Hosp, True Results Dallas Lap-Band, Tsl Medical
+                        Staffing, Turning Point Advanced Bariatric, Tx Hosp for Adv, U Smd Hospital At Arlington, U T
+                        Southwestern Moncrief Cncr, US Veterans Ctr, United In Home Nursing Services Inc, United
+                        Surgical Partners, Us Infusion Inc, Usmd Hospital, Ut Arlington, Utsw Po Dept, V A Hospital
+                        Marlin Texas, VA Denton Clinic, Va Hospital, Vascular Access Ctr-Dallas, Vibra Hospital Of
+                        Desoto, Vibra Specialty Hospital, Victory Medical Center Plano, Victory Memorial Hospital, W S B
+                        Inc, Webscribe, Inc, Wichita General Hospital, Wilson N Jones Medical Ctr, Windhaven Surgery
+                        Ctr, Winnie Community Hospital, Winona Memorial Hospital, Wise Regional Health System, Word For
+                        Word, X-Ray Temporaries, Young Brown Inc, Zale Lipshy Hospital, Zale Lipshy University Hospital,
+                        Zlh Lc, Inc. Fka Zale Lipshy University Hospital, Inc</p>
+                </div>
+            </div>
+            <div class="scroll-block col-6">
+                <div class="scroll-block-row">
+                    <div class="scroll-block-icon">
+                        <img width="76" height="83" loading="lazy" class="delivery__icon"
+                            src="assets/icon-cemeteries.svg" alt="">
+                    </div>
+                    <div class="scroll-block-title">Local Cemeteries & Funeral Homes</div>
+                </div>
+                <div class="scroll-text-content">
+                    <p>A Cremation, Aaron Davis, Accu Care Crematory, Accu Care Crematory-Fort Worth, Agape Mind
+                        Services, Ajak, Al Baqi Inc, Alexander Cremation &amp; Funeral Service, All Occasions By
+                        Thaddaeos, Altmeyer Enterprises, American Funeral Service of Colbert, Anderson-Clayton Bros
+                        Funeral Home Inc, Angel Wings Funeral Service, Angelic Mortuary Inc, Angelyss Funeral Home,
+                        April Kisselburg, Arch Angels Funeral &amp; Chapel, Archangel Funeral Hm &amp; Chapel, Aria
+                        Cremation Service, Aria Cremation Service and Funeral Home, Aria Cremation Svc &amp; Funeral,
+                        Arlington, Azleland Memorial Park, Azleland Perpetual Care Cemetery, Bean Massey Burge Funeral
+                        Home, Bean-Massey-Burge Funeral Home, Bear Creek Cemetery Foundation, Belew Cemetery, Bell's
+                        Chapel Cemetery Association, Inc., Benevolence Funeral Home, Bennie Smith Inc, Big A Cemetery
+                        Foundation, Biggers Funeral Home, Bledsoe Family Flying B L, Blend Steven Funeral Director,
+                        Bluitt-Redd Enterprises, Bolivar Cemetery Assn Inc, Brandon Hooker And Shari H, Bratcher Funeral
+                        Home, Brewer George A Jr Funrl Dir, C A Mortuary Services, Cain Cemetery Corporation, Calvary
+                        Hill Cemetery, Calvary Hill Funeral Home, Calvert Grave Services, Carillo Funeral Homes,
+                        Carrillo Funeral Homes, Cary Chester II, Casebier Companies Inc, Caston Motor Cycle Funeral
+                        Escort, Catholic Cemeteries of Dallas, Cedar Hill Memorial Cemetary, Cedar Hill Memorial
+                        Cemetery, Cem Worldwide Inc, Cemetery Aurora, Cemetery Creation, Chapel of Roses Funeral Home,
+                        Cherished Memorial, Chism Smith Funeral Home, City of Greenville Cemeteries, Clark Nat Funeral
+                        Preneed, Clarks Serenity Funeral Home, Coker Mathews Funeral Home, Coker-Hawkins Funeral Home,
+                        Coker-Mathews Funeral Home, Coleman Atlanta Funeral Home, Community Cemetery Associates, Cortina
+                        Condominium Partners, Craig Calcaterra Custom Interi, Cravens Funeral Home, D &amp; D Johnson
+                        Funeral Home, DFW Crematory, DFW Honor Guard, Dallas Funeral Home, Dallas Jewish Funerals,
+                        Dallas Mortuary Svc, Dalloas Care Center, Dannel Funeral Home, Davis Funeral Chapel, Davis
+                        Funeral Home, Decatur Cemetery Board, Den-Co Memorials, Denton Cemetery, Denton Funeral Home,
+                        Dfw Care Center, Dido Cemetery Association, Dignity Memorial, Direct Cremation, Distinctive Life
+                        Cremation &amp; Funeral Services, Donald L Mckneely, Dry Creek Cemetery Assoc, Earnheart Funeral
+                        Home, Eastern Hills Office Park, Eastgate Funeral Home &amp; Cremation Services, Eichman Keith,
+                        Elliott Cemetery Assoc In, Ellis County Mortuary &amp; Crmtn, Emanuel Cemetery, Evergreen
+                        Florist, Evergreen Memorial Funeral, F Monreal Enterprises Inc, Fairview Cemetery, Family
+                        Heritage, Family Heritage Plan, Fielder-Baker Funeral Home, Fitzhugh Cemetery Association,
+                        Fitzhugh Cemetery Association Trust Fund 000911, Floral Monuments.Com, Forest Academy Cemetery
+                        Assoc, Forest Lawn Cemetery, Forest Ridge Funeral Home, Friends Of Etter Lake Cem, Fulton Land
+                        Co, Funeral Central, Funeral Directors Acceptance Corp, Funeral Exchange, Gainesville Cemetery
+                        Sexton, Garden Of Memories Memorial Park, Garden Valley Cemetery Foundation Inc, Garland
+                        Memorial Park, Garland Mills Cemetery Foundation, Gate of Heaven Church, Glen Abbey Gate House,
+                        Golden Gate Funeral Home, Golden Gate Funeral Home-Lancaster, Goliad Funeral Home Inc, Gonzalez
+                        Funeral Hm &amp; Crmtry, Gonzalez Funeral Home And Crematory Inc, Gossett Cemetery Assoc Of
+                        Tols, Graham Argyle Cemetery, Graham-Mason Cemetery Association, Inc., Grave Marker World, Green
+                        Valley Cemetery Associates Inc, Greenwood Cemetery Assn, Greenwood Memorial Park, Gribble
+                        Springs Cemetery Association Inc, Grove Hill Funeral Home, Grove Hill Memorial Park, Grovehill
+                        Funeral Home, Grundy Cementery, Grundy Cemetary, Guardian Cremation Society, Hart Bruce, Havenor
+                        Amy C, Heaven's Door Mortuary Service, Heavens's Rest Memorial Park, Helping Hands Family,
+                        Heritage Cremation Service, Heritage Funeral Home, Hietts Lybrand Funeral Home, Hillcrest
+                        Mausoleum &amp; Memorial Park, Hillcrest Mausoleums Mem Parks, Holy Redeemer Cemetery, Homestead
+                        Funeral Hm Grand Prr, Howard E Carter, Howard Harris, Hsm South Memorial Plaza Associates, Lp,
+                        Hughes Buckner Chapel, Hughes Family Funeral Hm Inc, Hughes Funeral Homes, Hughes Jefferson
+                        Chapel, Hughes North Chapel, Hurst's Fielder Baker Funeral Home, I O O F Cementery Asdsociation,
+                        Icon Partners, L.L.C., Intl. Funeral Associates, Isham Cemetery Assoc, Jackson R M Memorial
+                        Chapel, Jaynes Memorial Chapel, Jim's Funeral Home, John David Barnes, Johnson Leon,
+                        Johnson-Moore Funeral Home, Keene Memorial Park Cemetery, Kelly Thomas Funeral Home, Lakeview
+                        Cemetery, Lancaster Cemetery Association, Lee Cemetery, Legacy Home Ltd, Lincoln Cemetery,
+                        Lincoln Funeral Home, Lincoln Funeral Home &amp; Memorial Park, Little Bethel Memorial Park,
+                        Little Cycle W, Little Pet Cremation Service, Long Creek Cemetery, Lots For Less, Love Life
+                        Cremation Center, Lovein, Lovelife Cremation, Lucas Funeral Home, Lynch Funeral Home, Malley
+                        Shawn, Mansfield Funeral Home, Martin Oaks Cemetery, Mccowan Johnson Mansion Funeral Home,
+                        Mccurley Cemetery Assoc, Melissa Cemetery Association, Memorial Guardians Cemeteries, Memory
+                        Gardens, Memoryland Memorial Park, Mentley, Scott, Mezera/Young Home Group, Michael Ciuccio,
+                        Michelle McMillan, Restland PreNeed Counselor, Minton Chatwell Funeral Directors, Mission
+                        Services, Monarch Cremation Society, Monreal Hector, Moore &amp; Sons Funeral Hm Cmtry, Moore
+                        &amp; Sons Funeral Home &amp; Cemetery And Parkdale Cemetery, Moore &amp; Sons Funeral Home
+                        Cemetery And Crematory, Moore Bowen Road Funeral Home, Moore Crematory, Moore Funeral Home,
+                        Moore Memorial Gardens, Mortuary Enterprises, Mount Zion United Jewish Cemetery Inc, Mt. Carmel
+                        Funeral Home, Mullican-Little Funeral Home Inc, Muser Joan B, National Prearranged Services Inc,
+                        Nelson Cemetery, New Life Funeral Home, North Dallas Funeral Home, North Hills Funeral Home,
+                        North Texas Cremation Society, North Texas Crematory Incorporated, Oak Cliff Funeral Chapel, Old
+                        Alton Memorial Cemetary Association, Old Calvary Hill Cemetery, Old Kit Cemetery Inc, Old
+                        Oakwood Cemetery, On the Wings-A Dove Ministry, Pablo Monreal Jr, Paradigm Funeral &amp;
+                        Cremation, Paradigm Funeral &amp; Cremation S, Paradise Pre-Need Svc, Parkdale Cemetery,
+                        Peaceful Rest Funeral Home, Pecan Grove Cemetery, Peoples Funeral Home &amp; Chapel, Pets
+                        Everafter Pet Cemeteries, Phoenicia Funeral Home, Piano Mutual Cemetery 212818t, Pinkston Gilkey
+                        Mortuary, Pioneers Rest Cemetary, Pipkins Memorial Funeral Home, Plano Mutual Cemetery, Pleasant
+                        Grove Calvary Meml, Pleasant Mound Cemetery, Poitier Productions, Pre Need Systems, Preston
+                        Group, The Inc, Quentin's Funeral Service, Quentin's Funeral Svc, Ray Fransisco Embalming
+                        Services, Rest Haven Funeral Hm &amp; Meml, Restland Cemetary, Restland Cemetery, Restland
+                        Funeral Home, Restland Memorial Park &amp; Funeral Home, Rhoton Funeral Home, Ridgeview Memorial
+                        Park, Ridgeview Memorial Park Inc, Ridgeview West Memorial Park, Rightstar Systems, Robert K
+                        Bryant, Robertson Mueller Harper Funeral Directors, Robertson Muller Harper, Roselawn Cemetery,
+                        Roselawn Funeral Home &amp; Memorial Gardens, Royse City Cemetery, Russell Funeral Home,
+                        Rutherford William, SCI Texas Funeral Services, Sacred Funeral Homes, Sacred Heart Cemetery,
+                        Samart Shantala R MD, San Marino Villas, Schiefelbein Kim, Sci, Scoggins Funeral Home, Scott
+                        Cemetery Association, Serenity Furnerals &amp; Cremations, Seroyer, Shannon North Funeral
+                        Chapel, Shannon Rose Hill Funeral Chapel and Cemetery, Shannon Rufe Snow Drive Funeral Chapel,
+                        Shearith Israel Memorial Park, Sherrie E Hardage Interiors, Sipapu Cemetery Services, Smithfield
+                        Cemetery, Southland Cemetery, Southland Memorial Park, Southland Memorial Park Cemetery,
+                        Southwest Cemetery Assoc, Sparkman Funeral Home &amp; Cremation Services, Sparkman Hillcrest
+                        Flower Shop, Sparkman's Funeral Pre-Plannin, Sparkman-Crane Funeral Home, Sparkman/Hillcrest
+                        Funeral Home, Spears Family Service Funeral Home, Spencer At Fannin County Funeral Home, Spencer
+                        Funeral Home, Stanmore Inc, Stewart Services Laurel Land, Stiff Chapel Cemetery Assn, Stpaul
+                        Cemetery Assoc, Summers Professional Vehicles Inc, T Natchez 2, T Ross Burke Co, T and J Family
+                        Funeral Home, Ted Dickey Funeral Home, Ted Dickey West Funeral Home, Temple Emanuel, Terry L
+                        Fagala, Texas Cemetery Services, Texas National Cemetery F, The Black Family Cemetery, Thrash
+                        Chas E Funl Dir, Thrash Funeral Home, Thrash Memorial Funeral Home, Tomlin Cemetery Assoc Inc,
+                        Trinity Cemetery Assoc, Turrentine Jackson Morrow Funeral Homes, Turrentine-Jackson-Morrow
+                        Funeral Home, United Funeral Directors, Unity Funeral Home, Usrey &amp; Associates Inc, Vittitoe
+                        Cemetery, W Allen Shaw, Wade Family Funeral Home, Washburn Cemetery Association, Watts Funeral
+                        Home Kingston, Wave Of Memories, Wayne Boze Trade Service, White's Chapel Cemetery Association,
+                        Whites Funeral Homes, Willow Wild Cemetery, Wingfield Family Society, Woodcreek Cemetery Inc</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__block mt-20 mb-20">
+            <div id="copyright-info" class="copyright__links">
+                <a class="copyright__link" href="https://blancofloral.com/terms-of-service/">
+                    Terms of Service
+                </a>
+                <span>·</span>
+
+                <a class="copyright__link" href="https://blancofloral.com/privacy-policy/">
+                    Privacy Policy
+                </a>
+                <span>·</span>
+
+                <a class="copyright__link" href="https://blancofloral.com/accessibility-statement/">
+                    Accessibility
+                </a>
+                <span>·</span>
+
+                <a class="copyright__link" href="https://blancofloral.com/sitemap/">
+                    Sitemap
+                </a>
+                <p class="copyright__all-rights-reserved">All Rights Reserved ©</p>
+            </div>
+        </div>
     </section>
 </body>
 
