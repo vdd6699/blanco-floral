@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Blanco Floral</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/detail.css">
+    <link rel="stylesheet" href="css/prosper-florist-flower-delivery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    .step-review {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .step-review .step-icon {
+      color: #28a745;
+      font-size: 1.5rem;
+      margin-right: 10px;
+    }
+    .step-review .step-content {
+      flex: 1;
+    }
+    </style>
+</head>
+
+<body>
+    <header class="header" id="header-main"></header>
+
+
+    <main class="main-hero">
+        <!-- ...existing code... -->
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <!-- Form checkout 4 bước -->
+                    <div id="checkout-steps">
+                        <!-- Step 1 Review -->
+                        <div id="step1Review" class="step-review d-none">
+                            <span class="step-icon"><i class="fa fa-check-circle"></i></span>
+                            <div class="step-content" id="step1ReviewContent"></div>
+                        </div>
+                        <!-- Step 1: Your Information -->
+                        <div id="step1" class="checkout-step">
+                            <h4>Your Information</h4>
+                            <div class="mb-3">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" required>
+                            </div>
+                            <button class="btn btn-primary w-100" id="step1Continue">Save and Continue</button>
+                        </div>
+                        <!-- Step 2 Review -->
+                        <div id="step2Review" class="step-review d-none">
+                            <span class="step-icon"><i class="fa fa-check-circle"></i></span>
+                            <div class="step-content" id="step2ReviewContent"></div>
+                        </div>
+                        <!-- Step 2: Fulfill Information -->
+                        <div id="step2" class="checkout-step d-none">
+                            <div id="step1Info" class="mb-3"></div>
+                            <h4>Fulfill Information</h4>
+                            <div class="mb-3 d-flex justify-content-between">
+                                <button type="button" class="btn btn-outline-primary flex-fill me-2" id="pickupBtn">Pickup</button>
+                                <button type="button" class="btn btn-outline-primary flex-fill ms-2" id="deliveryBtn">Delivery</button>
+                            </div>
+                            <div id="pickupInfo" class="d-none">
+                                <h5>Pickup Information</h5>
+                                <div class="mb-2">Address: 123 Main St, Prosper, TX</div>
+                                <div class="mb-2">Store Hours: 7:30 AM - 5:45 PM</div>
+                                <div class="mb-3">
+                                    <label class="form-label">Pickup Time</label>
+                                    <div class="d-flex mb-2">
+                                        <button type="button" class="btn btn-outline-secondary me-2 pickup-time-option" data-day="today">Today (Mon, 18/09)</button>
+                                        <button type="button" class="btn btn-outline-secondary me-2 pickup-time-option" data-day="tomorrow">Tomorrow (Tue, 19/09)</button>
+                                        <button type="button" class="btn btn-outline-secondary pickup-time-option" data-day="dayafter">Day After (Wed, 20/09)</button>
+                                    </div>
+                                    <input type="time" class="form-control mb-2" id="pickupTimeInput">
+                                    <label class="form-label">Special Time</label>
+                                    <select class="form-select" id="specialTimeSelect">
+                                        <!-- Option 30 phút từ 7:30 đến 5:45 -->
+                                    </select>
+                                </div>
+                            </div>
+                            <div id="deliveryInfo" class="d-none mt-3">
+                                <h5>Delivery Information</h5>
+                                <div class="mb-2">
+                                    <label for="deliveryAddress" class="form-label">Address</label>
+                                    <input type="text" class="form-control" id="deliveryAddress" required>
+                                </div>
+                                <div class="mb-2">
+                                    <label for="deliveryApt" class="form-label">Apartment, Suite, Unit, etc. <span class="text-muted">(optional)</span></label>
+                                    <input type="text" class="form-control" id="deliveryApt">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="deliveryType" class="form-label">Address Type <span class="text-muted">(optional)</span></label>
+                                    <input type="text" class="form-control" id="deliveryType">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="deliveryCompany" class="form-label">Company <span class="text-muted">(optional)</span></label>
+                                    <input type="text" class="form-control" id="deliveryCompany">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="deliveryCityState" class="form-label">City, State</label>
+                                    <input type="text" class="form-control" id="deliveryCityState" required>
+                                </div>
+                                <div class="mb-2">
+                                    <label for="deliveryPostal" class="form-label">Postal Code</label>
+                                    <input type="text" class="form-control" id="deliveryPostal" required>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-100" id="step2Continue">Save and Continue</button>
+                        </div>
+                        <!-- Step 3 Review -->
+                        <div id="step3Review" class="step-review d-none">
+                            <span class="step-icon"><i class="fa fa-check-circle"></i></span>
+                            <div class="step-content" id="step3ReviewContent"></div>
+                        </div>
+                        <!-- Step 3: Receive Information -->
+                        <div id="step3" class="checkout-step d-none">
+                            <div id="step2Info" class="mb-3"></div>
+                            <h4>Receive Information</h4>
+                            <div class="mb-3">
+                                <label for="receiveFirstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="receiveFirstName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="receiveLastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="receiveLastName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="receiveEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="receiveEmail" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="receivePhone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="receivePhone" required>
+                            </div>
+                            <button class="btn btn-primary w-100" id="step3Continue">Save and Continue</button>
+                        </div>
+                        <!-- Step 4: Confirmation (placeholder) -->
+                        <div id="step4" class="checkout-step d-none">
+                            <div id="step3Info" class="mb-3"></div>
+                            <!-- Stripe Elements Form -->
+                            <form id="payment-form">
+                              <div id="card-element"><!-- Stripe Elements sẽ render ở đây --></div>
+                              <button id="submit-payment" class="btn btn-success w-100 mt-3">Thanh toán</button>
+                              <div id="payment-message" class="mt-2"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 d-flex flex-column justify-content-center product-checkout-summary">
+                    <h2 class="product-title mb-3">Order Summary</h2>
+                    <!-- Phần 1: Danh sách sản phẩm -->
+                    <div class="checkout-products mb-3">
+                        <div class="checkout-item d-flex justify-content-between align-items-center mb-2">
+                            <div class="item-details d-flex align-items-center">
+                                <img src="assets/flower.avif" alt="Blanco Signature Bouquet" class="img-thumbnail me-2" style="width:50px; height:50px; object-fit:cover;">
+                                <div class="d-flex flex-column">
+                                    <span class="item-name fw-bold">Blanco Signature Bouquet - Standard</span>
+                                    <span class="item-quantity text-muted">Quantity: 1</span>
+                                </div>
+                            </div>
+                            <div class="item-price">$59.99</div>
+                        </div>
+                        <div class="checkout-item d-flex justify-content-between align-items-center mb-2">
+                            <div class="item-details d-flex align-items-center">
+                                <img src="assets/blanco-logo.avif" alt="Blanco Signature Bouquet Deluxe" class="img-thumbnail me-2" style="width:50px; height:50px; object-fit:cover;">
+                                <div class="d-flex flex-column">
+                                    <span class="item-name fw-bold">Blanco Signature Bouquet - Deluxe</span>
+                                    <span class="item-quantity text-muted">Quantity: 2</span>
+                                </div>
+                            </div>
+                            <div class="item-price">$79.99</div>
+                        </div>
+                    </div>
+                    <!-- Phần 2: Tổng tiền -->
+                    <div class="checkout-summary-details border-top pt-3">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span>Subtotal</span>
+                            <span>$219.97</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span>Tax</span>
+                            <span>$10.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span>Tip</span>
+                            <span>$5.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center border-top pt-2">
+                            <span class="fw-bold">Grand Total</span>
+                            <span class="fw-bold" style="font-size:1.2rem;">$234.97</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section id="super-footer"></section>
+    <script src="js/load-partials.js"></script>
+</body>
+
+</html>
+<script src="js/main.js"></script>
+<script src="js/product.js"></script>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+// Helper: tạo option cho select special time
+function generateSpecialTimeOptions() {
+    const select = document.getElementById('specialTimeSelect');
+    if (!select) return;
+    select.innerHTML = '';
+    let start = 7 * 60 + 30; // 7:30
+    let end = 17 * 60 + 45; // 17:45
+    for (let min = start; min <= end; min += 30) {
+        let h = Math.floor(min / 60);
+        let m = min % 60;
+        let label = `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`;
+        let option = document.createElement('option');
+        option.value = label;
+        option.textContent = label;
+        select.appendChild(option);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    generateSpecialTimeOptions();
+    // Step control
+    const step1 = document.getElementById('step1');
+    const step2 = document.getElementById('step2');
+    const step3 = document.getElementById('step3');
+    const step4 = document.getElementById('step4');
+    const step1Continue = document.getElementById('step1Continue');
+    const step2Continue = document.getElementById('step2Continue');
+    const step3Continue = document.getElementById('step3Continue');
+    const pickupBtn = document.getElementById('pickupBtn');
+    const deliveryBtn = document.getElementById('deliveryBtn');
+    const pickupInfo = document.getElementById('pickupInfo');
+    const deliveryInfo = document.getElementById('deliveryInfo');
+    const step1Info = document.getElementById('step1Info');
+    const step2Info = document.getElementById('step2Info');
+    const step3Info = document.getElementById('step3Info');
+
+    // Step 1 → Step 2
+    step1Continue.addEventListener('click', function () {
+        // Lấy dữ liệu step 1
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        // Hiển thị lại thông tin ở step 2
+        step1Info.innerHTML = `<div class='mb-2'><strong>Your Info:</strong> ${firstName} ${lastName}, ${email}, ${phone}</div>`;
+        step1.classList.add('d-none');
+        step2.classList.remove('d-none');
+        // Hiển thị review step 1
+        document.getElementById('step1ReviewContent').innerHTML = `
+            <div><strong>${firstName} ${lastName}</strong></div>
+            <div>${email}</div>
+            <div>${phone}</div>
+        `;
+        document.getElementById('step1Review').classList.remove('d-none');
+    });
+
+    // Step 2: chọn Pickup/Delivery
+    pickupBtn.addEventListener('click', function () {
+        pickupInfo.classList.remove('d-none');
+        deliveryInfo.classList.add('d-none');
+        pickupBtn.classList.add('active');
+        deliveryBtn.classList.remove('active');
+    });
+    deliveryBtn.addEventListener('click', function () {
+        deliveryInfo.classList.remove('d-none');
+        pickupInfo.classList.add('d-none');
+        deliveryBtn.classList.add('active');
+        pickupBtn.classList.remove('active');
+    });
+
+    // Step 2 → Step 3
+    step2Continue.addEventListener('click', function () {
+        // Lấy dữ liệu step 2
+        let fulfillType = pickupBtn.classList.contains('active') ? 'Pickup' : 'Delivery';
+        let time = '';
+        if (fulfillType === 'Pickup') {
+            // Lấy thời gian
+            const pickupTimeInput = document.getElementById('pickupTimeInput').value;
+            const specialTimeSelect = document.getElementById('specialTimeSelect').value;
+            time = pickupTimeInput ? pickupTimeInput : specialTimeSelect;
+        }
+        step2Info.innerHTML = `<div class='mb-2'><strong>Fulfill:</strong> ${fulfillType} ${time ? ', Time: ' + time : ''}</div>`;
+        step2.classList.add('d-none');
+        step3.classList.remove('d-none');
+        // Hiển thị review step 2
+        let reviewHtml = '';
+        if (fulfillType === 'Pickup') {
+            reviewHtml = `<div>Pickup set for <strong>${document.querySelector('.pickup-time-option.active')?.textContent || document.getElementById('pickupTimeInput').value || document.getElementById('specialTimeSelect').value}</strong></div>
+            <div>123 Main St, Prosper, TX</div>`;
+        } else {
+            reviewHtml = `<div>Delivery set for <strong>${document.getElementById('deliveryAddress').value}</strong></div>
+            <div>${document.getElementById('deliveryCityState').value}, ${document.getElementById('deliveryPostal').value}</div>`;
+        }
+        document.getElementById('step2ReviewContent').innerHTML = reviewHtml;
+        document.getElementById('step2Review').classList.remove('d-none');
+    });
+
+    // Step 3 → Step 4
+    step3Continue.addEventListener('click', function () {
+        // Lấy dữ liệu step 3
+        const rFirstName = document.getElementById('receiveFirstName').value;
+        const rLastName = document.getElementById('receiveLastName').value;
+        const rEmail = document.getElementById('receiveEmail').value;
+        const rPhone = document.getElementById('receivePhone').value;
+        step3Info.innerHTML = `<div class='mb-2'><strong>Receiver:</strong> ${rFirstName} ${rLastName}, ${rEmail}, ${rPhone}</div>`;
+        step3.classList.add('d-none');
+        step4.classList.remove('d-none');
+        // Hiển thị review step 3
+        document.getElementById('step3ReviewContent').innerHTML = `
+            <div><strong>${document.getElementById('receiveFirstName').value} ${document.getElementById('receiveLastName').value}</strong></div>
+            <div>We will contact ${document.getElementById('receivePhone').value} in case of delivery questions.</div>
+        `;
+        document.getElementById('step3Review').classList.remove('d-none');
+    });
+
+    // Xử lý chọn time: nếu chọn input time thì bỏ focus 3 option
+    document.getElementById('pickupTimeInput').addEventListener('focus', function () {
+        document.querySelectorAll('.pickup-time-option').forEach(btn => btn.classList.remove('active'));
+    });
+    document.querySelectorAll('.pickup-time-option').forEach(btn => {
+        btn.addEventListener('click', function () {
+            document.getElementById('pickupTimeInput').value = '';
+            document.querySelectorAll('.pickup-time-option').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        });
+    });
+
+    // Stripe Elements setup
+    if (window.Stripe) {
+      var stripe = Stripe('pk_test_xxx'); // Thay bằng public key của bạn
+      var elements = stripe.elements();
+      var card = elements.create('card');
+      card.mount('#card-element');
+      var paymentForm = document.getElementById('payment-form');
+      var paymentMessage = document.getElementById('payment-message');
+      paymentForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        paymentMessage.textContent = '';
+        // Gọi API backend để tạo PaymentIntent và lấy clientSecret
+        const res = await fetch('/create-payment-intent', { method: 'POST' });
+        const data = await res.json();
+        const clientSecret = data.clientSecret;
+        const {error, paymentIntent} = await stripe.confirmCardPayment(clientSecret, {
+          payment_method: { card: card }
+        });
+        if (error) {
+          paymentMessage.textContent = error.message;
+        } else if (paymentIntent && paymentIntent.status === 'succeeded') {
+          paymentMessage.textContent = 'Thanh toán thành công!';
+        }
+      });
+    }
+});
+</script>
