@@ -542,6 +542,12 @@ form.menu-search button:hover {
     padding: 0;
 }
 
+#super-footer-main {
+    max-width: 1200px;
+    background: #fff;
+    margin: 0 auto;
+    padding: 0;
+}
 .contact-info-box {
     max-width: 1400px;
     margin: 32px auto 24px auto;
@@ -1215,4 +1221,10 @@ form.menu-search button:hover {
     padding: 8px 18px;
     color: #333;
     text-decoration: none;
+}
+
+.input-error {
+  color: #dc3545;
+  font-size: 0.95em;
+  margin-top: 4px;
 }

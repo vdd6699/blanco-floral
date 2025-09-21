@@ -1,20 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Pricing option focus effect
-    const priceOptions = document.querySelectorAll('.price-option');
-    priceOptions.forEach(function(opt) {
-        opt.addEventListener('click', function() {
-            priceOptions.forEach(o => o.classList.remove('active'));
-            opt.classList.add('active');
-        });
-    });
-    const form = document.querySelector('form');
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for contacting us!');
-            form.reset();
-        });
-    }
 
     // Hiển thị nút See More nếu nội dung vượt quá 540px
     var aboutContent = document.querySelector('.about-us-content');

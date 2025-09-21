@@ -131,3 +131,13 @@
 .slide-btn:hover {
 	background: #e6f2e6;
 }
+/* Filter section styles */
+.filter-checkbox {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+.filter-checkbox-row {
+    margin-bottom: 8px;
+}
