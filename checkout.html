@@ -11,19 +11,21 @@
     <!-- Bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-    .step-review {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-    .step-review .step-icon {
-      color: #28a745;
-      font-size: 1.5rem;
-      margin-right: 10px;
-    }
-    .step-review .step-content {
-      flex: 1;
-    }
+        .step-review {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .step-review .step-icon {
+            color: #28a745;
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        .step-review .step-content {
+            flex: 1;
+        }
     </style>
 </head>
 
@@ -74,8 +76,10 @@
                             <div id="step1Info" class="mb-3"></div>
                             <h4>Fulfill Information</h4>
                             <div class="mb-3 d-flex justify-content-between">
-                                <button type="button" class="btn btn-outline-primary flex-fill me-2" id="pickupBtn">Pickup</button>
-                                <button type="button" class="btn btn-outline-primary flex-fill ms-2" id="deliveryBtn">Delivery</button>
+                                <button type="button" class="btn btn-outline-primary flex-fill me-2"
+                                    id="pickupBtn">Pickup</button>
+                                <button type="button" class="btn btn-outline-primary flex-fill ms-2"
+                                    id="deliveryBtn">Delivery</button>
                             </div>
                             <div id="pickupInfo" class="d-none">
                                 <h5>Pickup Information</h5>
@@ -84,9 +88,12 @@
                                 <div class="mb-3">
                                     <label class="form-label">Pickup Time</label>
                                     <div class="d-flex mb-2">
-                                        <button type="button" class="btn btn-outline-secondary me-2 pickup-time-option" data-day="today">Today (Mon, 18/09)</button>
-                                        <button type="button" class="btn btn-outline-secondary me-2 pickup-time-option" data-day="tomorrow">Tomorrow (Tue, 19/09)</button>
-                                        <button type="button" class="btn btn-outline-secondary pickup-time-option" data-day="dayafter">Day After (Wed, 20/09)</button>
+                                        <button type="button" class="btn btn-outline-secondary me-2 pickup-time-option"
+                                            data-day="today">Today (Mon, 18/09)</button>
+                                        <button type="button" class="btn btn-outline-secondary me-2 pickup-time-option"
+                                            data-day="tomorrow">Tomorrow (Tue, 19/09)</button>
+                                        <button type="button" class="btn btn-outline-secondary pickup-time-option"
+                                            data-day="dayafter">Day After (Wed, 20/09)</button>
                                     </div>
                                     <input type="time" class="form-control mb-2" id="pickupTimeInput">
                                     <label class="form-label">Special Time</label>
@@ -102,15 +109,13 @@
                                     <input type="text" class="form-control" id="deliveryAddress" required>
                                 </div>
                                 <div class="mb-2">
-                                    <label for="deliveryApt" class="form-label">Apartment, Suite, Unit, etc. <span class="text-muted">(optional)</span></label>
+                                    <label for="deliveryApt" class="form-label">Apartment, Suite, Unit, etc. <span
+                                            class="text-muted">(optional)</span></label>
                                     <input type="text" class="form-control" id="deliveryApt">
                                 </div>
                                 <div class="mb-2">
-                                    <label for="deliveryType" class="form-label">Address Type <span class="text-muted">(optional)</span></label>
-                                    <input type="text" class="form-control" id="deliveryType">
-                                </div>
-                                <div class="mb-2">
-                                    <label for="deliveryCompany" class="form-label">Company <span class="text-muted">(optional)</span></label>
+                                    <label for="deliveryCompany" class="form-label">Company <span
+                                            class="text-muted">(optional)</span></label>
                                     <input type="text" class="form-control" id="deliveryCompany">
                                 </div>
                                 <div class="mb-2">
@@ -120,6 +125,23 @@
                                 <div class="mb-2">
                                     <label for="deliveryPostal" class="form-label">Postal Code</label>
                                     <input type="text" class="form-control" id="deliveryPostal" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Delivery Time</label>
+                                    <div class="d-flex mb-2">
+                                        <button type="button" class="btn btn-outline-secondary me-2 pickup-time-option"
+                                            data-day="today">Today (Mon, 18/09)</button>
+                                        <button type="button" class="btn btn-outline-secondary me-2 pickup-time-option"
+                                            data-day="tomorrow">Tomorrow (Tue, 19/09)</button>
+                                        <button type="button" class="btn btn-outline-secondary pickup-time-option"
+                                            data-day="dayafter">Day After (Wed, 20/09)</button>
+                                    </div>
+                                    <input type="time" class="form-control mb-2" id="pickupTimeInput">
+                                    <label class="form-label">Special Time</label>
+                                    <select class="form-select" id="specialTimeSelect">
+                                        <!-- Option 30 phút từ 7:30 đến 5:45 -->
+                                    </select>
                                 </div>
                             </div>
                             <button class="btn btn-primary w-100" id="step2Continue">Save and Continue</button>
@@ -156,9 +178,9 @@
                             <div id="step3Info" class="mb-3"></div>
                             <!-- Stripe Elements Form -->
                             <form id="payment-form">
-                              <div id="card-element"><!-- Stripe Elements sẽ render ở đây --></div>
-                              <button id="submit-payment" class="btn btn-success w-100 mt-3">Thanh toán</button>
-                              <div id="payment-message" class="mt-2"></div>
+                                <div id="card-element"><!-- Stripe Elements sẽ render ở đây --></div>
+                                <button id="submit-payment" class="btn btn-success w-100 mt-3">Thanh toán</button>
+                                <div id="payment-message" class="mt-2"></div>
                             </form>
                         </div>
                     </div>
@@ -169,7 +191,8 @@
                     <div class="checkout-products mb-3">
                         <div class="checkout-item d-flex justify-content-between align-items-center mb-2">
                             <div class="item-details d-flex align-items-center">
-                                <img src="assets/flower.avif" alt="Blanco Signature Bouquet" class="img-thumbnail me-2" style="width:50px; height:50px; object-fit:cover;">
+                                <img src="assets/flower.avif" alt="Blanco Signature Bouquet" class="img-thumbnail me-2"
+                                    style="width:50px; height:50px; object-fit:cover;">
                                 <div class="d-flex flex-column">
                                     <span class="item-name fw-bold">Blanco Signature Bouquet - Standard</span>
                                     <span class="item-quantity text-muted">Quantity: 1</span>
@@ -179,7 +202,8 @@
                         </div>
                         <div class="checkout-item d-flex justify-content-between align-items-center mb-2">
                             <div class="item-details d-flex align-items-center">
-                                <img src="assets/blanco-logo.avif" alt="Blanco Signature Bouquet Deluxe" class="img-thumbnail me-2" style="width:50px; height:50px; object-fit:cover;">
+                                <img src="assets/blanco-logo.avif" alt="Blanco Signature Bouquet Deluxe"
+                                    class="img-thumbnail me-2" style="width:50px; height:50px; object-fit:cover;">
                                 <div class="d-flex flex-column">
                                     <span class="item-name fw-bold">Blanco Signature Bouquet - Deluxe</span>
                                     <span class="item-quantity text-muted">Quantity: 2</span>
@@ -223,157 +247,174 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://js.stripe.com/v3/"></script>
 <script>
-// Helper: tạo option cho select special time
-function generateSpecialTimeOptions() {
-    const select = document.getElementById('specialTimeSelect');
-    if (!select) return;
-    select.innerHTML = '';
-    let start = 7 * 60 + 30; // 7:30
-    let end = 17 * 60 + 45; // 17:45
-    for (let min = start; min <= end; min += 30) {
-        let h = Math.floor(min / 60);
-        let m = min % 60;
-        let label = `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`;
-        let option = document.createElement('option');
-        option.value = label;
-        option.textContent = label;
-        select.appendChild(option);
+    // Helper: tạo option cho select special time
+    function generateSpecialTimeOptions() {
+        const select = document.getElementById('specialTimeSelect');
+        if (!select) return;
+        select.innerHTML = '';
+        let start = 7 * 60 + 30; // 7:30
+        let end = 17 * 60 + 45; // 17:45
+        for (let min = start; min <= end; min += 30) {
+            let h = Math.floor(min / 60);
+            let m = min % 60;
+            let label = `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`;
+            let option = document.createElement('option');
+            option.value = label;
+            option.textContent = label;
+            select.appendChild(option);
+        }
     }
-}
 
-document.addEventListener('DOMContentLoaded', function () {
-    generateSpecialTimeOptions();
-    // Step control
-    const step1 = document.getElementById('step1');
-    const step2 = document.getElementById('step2');
-    const step3 = document.getElementById('step3');
-    const step4 = document.getElementById('step4');
-    const step1Continue = document.getElementById('step1Continue');
-    const step2Continue = document.getElementById('step2Continue');
-    const step3Continue = document.getElementById('step3Continue');
-    const pickupBtn = document.getElementById('pickupBtn');
-    const deliveryBtn = document.getElementById('deliveryBtn');
-    const pickupInfo = document.getElementById('pickupInfo');
-    const deliveryInfo = document.getElementById('deliveryInfo');
-    const step1Info = document.getElementById('step1Info');
-    const step2Info = document.getElementById('step2Info');
-    const step3Info = document.getElementById('step3Info');
+    document.addEventListener('DOMContentLoaded', function () {
+        generateSpecialTimeOptions();
+        // Step control
+        const step1 = document.getElementById('step1');
+        const step2 = document.getElementById('step2');
+        const step3 = document.getElementById('step3');
+        const step4 = document.getElementById('step4');
+        const step1Continue = document.getElementById('step1Continue');
+        const step2Continue = document.getElementById('step2Continue');
+        const step3Continue = document.getElementById('step3Continue');
+        const pickupBtn = document.getElementById('pickupBtn');
+        const deliveryBtn = document.getElementById('deliveryBtn');
+        const pickupInfo = document.getElementById('pickupInfo');
+        const deliveryInfo = document.getElementById('deliveryInfo');
+        const step1Info = document.getElementById('step1Info');
+        const step2Info = document.getElementById('step2Info');
+        const step3Info = document.getElementById('step3Info');
 
-    // Step 1 → Step 2
-    step1Continue.addEventListener('click', function () {
-        // Lấy dữ liệu step 1
-        const firstName = document.getElementById('firstName').value;
-        const lastName = document.getElementById('lastName').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        // Hiển thị lại thông tin ở step 2
-        step1Info.innerHTML = `<div class='mb-2'><strong>Your Info:</strong> ${firstName} ${lastName}, ${email}, ${phone}</div>`;
-        step1.classList.add('d-none');
-        step2.classList.remove('d-none');
-        // Hiển thị review step 1
-        document.getElementById('step1ReviewContent').innerHTML = `
+        // Step 1 → Step 2
+        step1Continue.addEventListener('click', function () {
+            // Lấy dữ liệu step 1
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            // Hiển thị lại thông tin ở step 2
+            step1Info.innerHTML = `<div class='mb-2'><strong>Your Info:</strong> ${firstName} ${lastName}, ${email}, ${phone}</div>`;
+            step1.classList.add('d-none');
+            step2.classList.remove('d-none');
+            // Hiển thị review step 1
+            document.getElementById('step1ReviewContent').innerHTML = `
             <div><strong>${firstName} ${lastName}</strong></div>
             <div>${email}</div>
             <div>${phone}</div>
         `;
-        document.getElementById('step1Review').classList.remove('d-none');
-    });
+            document.getElementById('step1Review').classList.remove('d-none');
+        });
 
-    // Step 2: chọn Pickup/Delivery
-    pickupBtn.addEventListener('click', function () {
-        pickupInfo.classList.remove('d-none');
-        deliveryInfo.classList.add('d-none');
-        pickupBtn.classList.add('active');
-        deliveryBtn.classList.remove('active');
-    });
-    deliveryBtn.addEventListener('click', function () {
-        deliveryInfo.classList.remove('d-none');
-        pickupInfo.classList.add('d-none');
-        deliveryBtn.classList.add('active');
-        pickupBtn.classList.remove('active');
-    });
+        // Step 2: chọn Pickup/Delivery
+        pickupBtn.addEventListener('click', function () {
+            pickupInfo.classList.remove('d-none');
+            deliveryInfo.classList.add('d-none');
+            pickupBtn.classList.add('active');
+            deliveryBtn.classList.remove('active');
+        });
+        deliveryBtn.addEventListener('click', function () {
+            deliveryInfo.classList.remove('d-none');
+            pickupInfo.classList.add('d-none');
+            deliveryBtn.classList.add('active');
+            pickupBtn.classList.remove('active');
+        });
 
-    // Step 2 → Step 3
-    step2Continue.addEventListener('click', function () {
-        // Lấy dữ liệu step 2
-        let fulfillType = pickupBtn.classList.contains('active') ? 'Pickup' : 'Delivery';
-        let time = '';
-        if (fulfillType === 'Pickup') {
+        // Step 2 → Step 3
+        step2Continue.addEventListener('click', async function () {
+            // Lấy dữ liệu step 2
+            let fulfillType = pickupBtn.classList.contains('active') ? 'Pickup' : 'Delivery';
+            let time = '';
             // Lấy thời gian
             const pickupTimeInput = document.getElementById('pickupTimeInput').value;
             const specialTimeSelect = document.getElementById('specialTimeSelect').value;
             time = pickupTimeInput ? pickupTimeInput : specialTimeSelect;
-        }
-        step2Info.innerHTML = `<div class='mb-2'><strong>Fulfill:</strong> ${fulfillType} ${time ? ', Time: ' + time : ''}</div>`;
-        step2.classList.add('d-none');
-        step3.classList.remove('d-none');
-        // Hiển thị review step 2
-        let reviewHtml = '';
-        if (fulfillType === 'Pickup') {
-            reviewHtml = `<div>Pickup set for <strong>${document.querySelector('.pickup-time-option.active')?.textContent || document.getElementById('pickupTimeInput').value || document.getElementById('specialTimeSelect').value}</strong></div>
-            <div>123 Main St, Prosper, TX</div>`;
-        } else {
-            reviewHtml = `<div>Delivery set for <strong>${document.getElementById('deliveryAddress').value}</strong></div>
-            <div>${document.getElementById('deliveryCityState').value}, ${document.getElementById('deliveryPostal').value}</div>`;
-        }
-        document.getElementById('step2ReviewContent').innerHTML = reviewHtml;
-        document.getElementById('step2Review').classList.remove('d-none');
-    });
 
-    // Step 3 → Step 4
-    step3Continue.addEventListener('click', function () {
-        // Lấy dữ liệu step 3
-        const rFirstName = document.getElementById('receiveFirstName').value;
-        const rLastName = document.getElementById('receiveLastName').value;
-        const rEmail = document.getElementById('receiveEmail').value;
-        const rPhone = document.getElementById('receivePhone').value;
-        step3Info.innerHTML = `<div class='mb-2'><strong>Receiver:</strong> ${rFirstName} ${rLastName}, ${rEmail}, ${rPhone}</div>`;
-        step3.classList.add('d-none');
-        step4.classList.remove('d-none');
-        // Hiển thị review step 3
-        document.getElementById('step3ReviewContent').innerHTML = `
+            step2Info.innerHTML = `<div class='mb-2'><strong>Fulfill:</strong> ${fulfillType} ${time ? ', Time: ' + time : ''}</div>`;
+            step2.classList.add('d-none');
+            step3.classList.remove('d-none');
+            // Hiển thị review step 2
+            let reviewHtml = '';
+            if (fulfillType === 'Pickup') {
+                reviewHtml = `<div>Pickup set for <strong>${document.querySelector('.pickup-time-option.active')?.textContent || document.getElementById('pickupTimeInput').value || document.getElementById('specialTimeSelect').value}</strong></div>
+            <div>123 Main St, Prosper, TX</div>`;
+            } else {
+                // Gọi API Google Maps Distance Matrix
+                const origin = 'Prosper, TX 75078';
+                const destination = document.getElementById('deliveryAddress').value;
+                const apiKey = 'YOUR_GOOGLE_MAPS_API_KEY'; // Thay bằng API key thật
+                const url = `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${encodeURIComponent(origin)}&destinations=${encodeURIComponent(destination)}&key=${apiKey}`;
+                try {
+                    const res = await fetch(url);
+                    const data = await res.json();
+                    if (data.rows && data.rows[0] && data.rows[0].elements[0].status === 'OK') {
+                        const distance = data.rows[0].elements[0].distance.text;
+                        distanceHtml = `<div>Distance: <strong>${distance}</strong></div>`;
+                    } else {
+                        distanceHtml = `<div>Distance: <span class='text-danger'>Không xác định</span></div>`;
+                    }
+                } catch (err) {
+                    distanceHtml = `<div>Distance: <span class='text-danger'>Không xác định</span></div>`;
+                }
+                reviewHtml = `<div>Delivery set for <strong>${document.getElementById('deliveryAddress').value}</strong></div>
+            <div>${document.getElementById('deliveryCityState').value}, ${document.getElementById('deliveryPostal').value}</div>
+            <div>Time: <strong>${time}</strong></div>`;
+            }
+            document.getElementById('step2ReviewContent').innerHTML = reviewHtml;
+            document.getElementById('step2Review').classList.remove('d-none');
+        });
+
+        // Step 3 → Step 4
+        step3Continue.addEventListener('click', function () {
+            // Lấy dữ liệu step 3
+            const rFirstName = document.getElementById('receiveFirstName').value;
+            const rLastName = document.getElementById('receiveLastName').value;
+            const rEmail = document.getElementById('receiveEmail').value;
+            const rPhone = document.getElementById('receivePhone').value;
+            step3Info.innerHTML = `<div class='mb-2'><strong>Receiver:</strong> ${rFirstName} ${rLastName}, ${rEmail}, ${rPhone}</div>`;
+            step3.classList.add('d-none');
+            step4.classList.remove('d-none');
+            // Hiển thị review step 3
+            document.getElementById('step3ReviewContent').innerHTML = `
             <div><strong>${document.getElementById('receiveFirstName').value} ${document.getElementById('receiveLastName').value}</strong></div>
             <div>We will contact ${document.getElementById('receivePhone').value} in case of delivery questions.</div>
         `;
-        document.getElementById('step3Review').classList.remove('d-none');
-    });
-
-    // Xử lý chọn time: nếu chọn input time thì bỏ focus 3 option
-    document.getElementById('pickupTimeInput').addEventListener('focus', function () {
-        document.querySelectorAll('.pickup-time-option').forEach(btn => btn.classList.remove('active'));
-    });
-    document.querySelectorAll('.pickup-time-option').forEach(btn => {
-        btn.addEventListener('click', function () {
-            document.getElementById('pickupTimeInput').value = '';
-            document.querySelectorAll('.pickup-time-option').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+            document.getElementById('step3Review').classList.remove('d-none');
         });
-    });
 
-    // Stripe Elements setup
-    if (window.Stripe) {
-      var stripe = Stripe('pk_test_xxx'); // Thay bằng public key của bạn
-      var elements = stripe.elements();
-      var card = elements.create('card');
-      card.mount('#card-element');
-      var paymentForm = document.getElementById('payment-form');
-      var paymentMessage = document.getElementById('payment-message');
-      paymentForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        paymentMessage.textContent = '';
-        // Gọi API backend để tạo PaymentIntent và lấy clientSecret
-        const res = await fetch('/create-payment-intent', { method: 'POST' });
-        const data = await res.json();
-        const clientSecret = data.clientSecret;
-        const {error, paymentIntent} = await stripe.confirmCardPayment(clientSecret, {
-          payment_method: { card: card }
+        // Xử lý chọn time: nếu chọn input time thì bỏ focus 3 option
+        document.getElementById('pickupTimeInput').addEventListener('focus', function () {
+            document.querySelectorAll('.pickup-time-option').forEach(btn => btn.classList.remove('active'));
         });
-        if (error) {
-          paymentMessage.textContent = error.message;
-        } else if (paymentIntent && paymentIntent.status === 'succeeded') {
-          paymentMessage.textContent = 'Thanh toán thành công!';
+        document.querySelectorAll('.pickup-time-option').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.getElementById('pickupTimeInput').value = '';
+                document.querySelectorAll('.pickup-time-option').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+
+        // Stripe Elements setup
+        if (window.Stripe) {
+            var stripe = Stripe('pk_test_xxx'); // Thay bằng public key của bạn
+            var elements = stripe.elements();
+            var card = elements.create('card');
+            card.mount('#card-element');
+            var paymentForm = document.getElementById('payment-form');
+            var paymentMessage = document.getElementById('payment-message');
+            paymentForm.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                paymentMessage.textContent = '';
+                // Gọi API backend để tạo PaymentIntent và lấy clientSecret
+                const res = await fetch('/create-payment-intent', { method: 'POST' });
+                const data = await res.json();
+                const clientSecret = data.clientSecret;
+                const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
+                    payment_method: { card: card }
+                });
+                if (error) {
+                    paymentMessage.textContent = error.message;
+                } else if (paymentIntent && paymentIntent.status === 'succeeded') {
+                    paymentMessage.textContent = 'Thanh toán thành công!';
+                }
+            });
         }
-      });
-    }
-});
+    });
 </script>

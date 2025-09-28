@@ -77,4 +77,40 @@ document.addEventListener('DOMContentLoaded', function() {
             // ignore
         }
     })();
+
+    // Show more/show less logic for filter sections
+    var maxShow = 5;
+    var filterSections = document.querySelectorAll('.filter-section');
+    filterSections.forEach(function(section) {
+        var rows = section.querySelectorAll('.filter-checkbox-row');
+        if (rows.length > maxShow) {
+            // Ẩn các option vượt quá maxShow
+            rows.forEach(function(row, idx) {
+                if (idx >= maxShow) row.style.display = 'none';
+            });
+            // Tạo nút Show More
+            var showMoreBtn = document.createElement('span');
+            showMoreBtn.textContent = 'Show More';
+            showMoreBtn.className = 'filter-showmore-btn';
+            // Tạo nút Show Less
+            var showLessBtn = document.createElement('span');
+            showLessBtn.textContent = 'Show Less';
+            showLessBtn.className = 'filter-showless-btn';
+            showLessBtn.style.display = 'none';
+            showMoreBtn.onclick = function() {
+                rows.forEach(function(row) { row.style.display = ''; });
+                showMoreBtn.style.display = 'none';
+                showLessBtn.style.display = '';
+            };
+            showLessBtn.onclick = function() {
+                rows.forEach(function(row, idx) {
+                    row.style.display = idx < maxShow ? '' : 'none';
+                });
+                showMoreBtn.style.display = '';
+                showLessBtn.style.display = 'none';
+            };
+            section.appendChild(showMoreBtn);
+            section.appendChild(showLessBtn);
+        }
+    });
 });

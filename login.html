@@ -11,55 +11,7 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="header-top">
-            <div class="header-info">
-                <span>Blanco Floral</span><br>
-                <span>Serving the Greater Prosper Area</span><br>
-                <span>Prosper, TX 75078</span>
-            </div>
-            <div class="header-logo">
-                <img src="assets/blanco-logo.avif" alt="Blanco Floral Logo" height="200">
-            </div>
-            <div class="header-account">
-                <div class="dropdown-account">
-                    <a href="#" class="dropdown-toggle-account">MY ACCOUNT ▼</a>
-                    <ul class="dropdown-menu-account">
-                        <li><a href="/log-in"><img src="assets/icon-sign-out.svg" alt="Login"
-                                    style="height:19px;width:auto;vertical-align:middle;margin-right:6px;">Login</a>
-                        </li>
-                        <li><a href="/sign-up"><img src="assets/icon-acct-person.svg" alt="Sign Up"
-                                    style="height:19px;width:auto;vertical-align:middle;margin-right:6px;">Sign Up</a>
-                        </li>
-                    </ul>
-                </div>
-                <span class="header-cart">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Cart" width="28"
-                        style="vertical-align:middle;">
-                    <span class="cart-badge">0</span>
-                </span>
-            </div>
-        </div>
-        <div class="header-main">
-            <nav class="header-nav">
-                <a href="#">SHOP</a>
-                <div class="dropdown-order-online">
-                    <a href="#" class="dropdown-toggle-order">
-                        ORDER ONLINE ▾
-                    </a>
-                    <ul class="dropdown-menu-order">
-                        <li><a href="/order/delivery">Bouquet</a></li>
-                        <li><a href="/order/pickup">Boxes</a></li>
-                        <li><a href="/order/subscription">Vase</a></li>
-                        <li><a href="/order/custom">Bridal Bouquet Collection</a></li>
-                    </ul>
-                </div>
-                <a href="#">WEDDINGS AND EVENTS</a>
-                <a href="#">ABOUT US</a>
-                <a href="#">SUBSCRIPTIONS</a>
-            </nav>
-        </div>
-    </header>
+     <header class="header" id="header-main"></header>
     <!-- ...existing code... -->
     <main class="main-hero">
 
@@ -122,18 +74,6 @@
                         </span>
                     </a>
                     <div class="d-block d-sm-none w-100"><br></div>
-                    <div class="poweredbybloomnation bloomnationRep col-12">
-                        <span class="member_of_bloomnation_wrapper">
-                            <a href="https://blancofloral.com/about-us/" class="member_of_bloomnation">
-                                <span class="bloomnationRep-text">Premier florist on</span>
-                            </a>
-                            <a href="https://www.bloomnation.com/why-shop-local"
-                                class="member_of_bloomnation member_of_bloomnation-logo">
-                                <img class="bloomnationRep-img" src="assets/bloomnation-logo-2.svg"
-                                    alt="BloomNation Member" loading="lazy" width="156" height="23">
-                            </a>
-                        </span>
-                    </div>
                 </div>
             </div>
             <!-- Contact Info Section -->
@@ -255,3 +195,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
+<script src="js/load-partials.js"></script>

@@ -15,45 +15,7 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="header-top">
-            <div class="header-info">
-                <span>Blanco Floral</span><br>
-                <span>Serving the Greater Prosper Area</span><br>
-                <span>Prosper, TX 75078</span>
-            </div>
-            <div class="header-logo">
-                <img src="assets/blanco-logo.avif" alt="Blanco Floral Logo" height="200">
-            </div>
-            <div class="header-account">
-                <span>MY ACCOUNT ▼</span>
-                <span class="header-cart">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Cart" width="28"
-                        style="vertical-align:middle;">
-                    <span class="cart-badge">0</span>
-                </span>
-            </div>
-        </div>
-        <div class="header-main">
-            <nav class="header-nav">
-                <a href="#">SHOP</a>
-                <div class="dropdown-order-online">
-                    <a href="#" class="dropdown-toggle-order">
-                        ORDER ONLINE ▾
-                    </a>
-                    <ul class="dropdown-menu-order">
-                        <li><a href="/order/delivery">Bouquet</a></li>
-                        <li><a href="/order/pickup">Boxes</a></li>
-                        <li><a href="/order/subscription">Vase</a></li>
-                        <li><a href="/order/custom">Bridal Bouquet Collection</a></li>
-                    </ul>
-                </div>
-                <a href="#">WEDDINGS AND EVENTS</a>
-                <a href="#">ABOUT US</a>
-                <a href="#">SUBSCRIPTIONS</a>
-            </nav>
-        </div>
-    </header>
+     <header class="header" id="header-main"></header>
     <!-- ...existing code... -->
     <main class="main-hero">
         <div class="menu-section">
@@ -89,10 +51,167 @@
         <section class="product-list">
             <div class="product-flex-row" style="display:flex; gap:24px;">
                 <div class="aside-3" style="flex:3; background:#f8f8f8; min-height:100px; border-radius:8px;">
-                    <!-- Nội dung bên trái -->
-                    <!-- Thêm nội dung ở đây -->
                     <div id="flower-filter-options" class="filter-group">
-                       
+                        <div class="filter-section">
+                            <div class="filter-title">Price</div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>$49.99 or less</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>$50 - $74.99</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>$75 - $99.99</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>$100 - $124.99</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>$125 - $149.99</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>$150 and above</span></label></div>
+                        </div>
+                        <div class="filter-section">
+                            <div class="filter-title">Availability</div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>In Stock</span></label></div>
+                        </div>
+                        <div class="filter-section">
+                            <div class="filter-title">Order Online</div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Bouquet</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Boxes</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Vase</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Bridal Bouquet Collection</span></label></div>
+                        </div>
+                        <div class="filter-section">
+                            <div class="filter-title">Occasions</div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Anniversary</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Autumn</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Birthday</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Congrats</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Get Well</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Gift Sets</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Grandparent's Day</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Halloween</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>I'm Sorry</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Just Because</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Labor Day</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Love and Romance</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>New Baby</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Parent's Day</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Quinceañera</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Rosh Hashanah</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Summer</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Sympathy and Funeral</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Thank You</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Wedding</span></label></div>
+                        </div>
+                        <div class="filter-section">
+                            <div class="filter-title">Flower Type</div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Dahlias</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Delphinium</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Daisies</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Hyacinth</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Hydrangeas</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Iris</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Succulents</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Lilac</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Lilies</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Calla Lilies</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Cymbidium Orchid</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Ranunculus</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Roses</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Stock</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Sunflowers</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Tropical</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Tulips</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Bells of Ireland</span></label></div>
+                        </div>
+                        <div class="filter-section">
+                            <div class="filter-title">Color</div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Red</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Pink</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Purple</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>White</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Yellow</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Lavender</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Peach</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Green</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Blue</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Orange</span></label></div>
+                        </div>
+                        <div class="filter-section">
+                            <div class="filter-title">Style</div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Traditional</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Modern</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Grand</span></label></div>
+                        </div>
+                        <div class="filter-section">
+                            <div class="filter-title">Sympathy Type</div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Bouquet</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Casket</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Easels</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>For the Home</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>For the Service</span></label></div>
+                            <div class="filter-checkbox-row"><label><input type="checkbox"
+                                        class="filter-checkbox" /><span>Vase</span></label></div>
+                        </div>
                     </div>
                 </div>
                 <div class="main-9" style="flex:9;">
@@ -226,18 +345,6 @@
                         </span>
                     </a>
                     <div class="d-block d-sm-none w-100"><br></div>
-                    <div class="poweredbybloomnation bloomnationRep col-12">
-                        <span class="member_of_bloomnation_wrapper">
-                            <a href="https://blancofloral.com/about-us/" class="member_of_bloomnation">
-                                <span class="bloomnationRep-text">Premier florist on</span>
-                            </a>
-                            <a href="https://www.bloomnation.com/why-shop-local"
-                                class="member_of_bloomnation member_of_bloomnation-logo">
-                                <img class="bloomnationRep-img" src="assets/bloomnation-logo-2.svg"
-                                    alt="BloomNation Member" loading="lazy" width="156" height="23">
-                            </a>
-                        </span>
-                    </div>
                 </div>
             </div>
             <!-- Contact Info Section -->
@@ -311,11 +418,11 @@
 
 </html>
 <script src="js/main.js"></script>
+<script src="js/load-partials.js"></script>
 <script src="js/productApi.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', async function () {
         await fetchOptions("https://blancofloral.shop/api/home");
         renderFlowerFilters(window.productOptions.lstShoppingOptionFilters || [], "flower-filter-all");
-        renderFilterOptions(window.productOptions.lstShoppingOptions || [], "flower-filter-options");
     });
 </script>

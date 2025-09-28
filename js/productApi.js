@@ -40,44 +40,5 @@ function renderFlowerFilters(filters, ulId) {
     }
 }
 
-
-/**
- * Render các filter-section với filter-title và các checkbox detail_name
- * @param {Array} options - Mảng các option từ API
- * @param {string} containerId - ID của phần tử chứa filter-group
- */
-function renderFilterOptions(options, containerId) {
-    var container = document.getElementById(containerId);
-    console.log(options);
-    
-    if (!container) return;
-    container.innerHTML = '';
-    options.forEach(function(option) {
-        var section = document.createElement('div');
-        section.className = 'filter-section';
-        var title = document.createElement('div');
-        title.className = 'filter-title';
-        title.textContent = option.option_name;
-        section.appendChild(title);
-        console.log(option);
-        (option.lstShoppingOptionDetails || []).forEach(function(detail) {
-            var div = document.createElement('div');
-            div.className = 'filter-checkbox-row';
-            var label = document.createElement('label');
-            var input = document.createElement('input');
-            input.type = 'checkbox';
-            input.className = 'filter-checkbox';
-            label.appendChild(input);
-            var span = document.createElement('span');
-            span.textContent = detail.detail_name;
-            label.appendChild(span);
-            div.appendChild(label);
-            section.appendChild(div);
-        });
-        container.appendChild(section);
-    });
-}
-
 window.fetchOptions = fetchOptions;
 window.renderFlowerFilters = renderFlowerFilters;
-window.renderFilterOptions = renderFilterOptions;

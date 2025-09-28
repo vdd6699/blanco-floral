@@ -40,3 +40,16 @@
   color: #212427;
   border-color: #3c7031;
 }
+.filter-checkbox-row span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.filter-showmore-btn, .filter-showless-btn {
+    display: block;
+    font-size: 12px;
+    font-weight: 200 !important;
+    margin-bottom: 20px;
+    padding-left: 5px;
+}
