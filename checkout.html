@@ -173,6 +173,7 @@
                             </div>
                             <button class="btn btn-primary w-100" id="step3Continue">Save and Continue</button>
                         </div>
+                        <div id="distance"></div>
                         <!-- Step 4: Confirmation (placeholder) -->
                         <div id="step4" class="checkout-step d-none">
                             <div id="step3Info" class="mb-3"></div>
@@ -265,6 +266,26 @@
         }
     }
 
+    // Hàm gọi Mapbox Geocoding API để lấy tọa độ từ địa chỉ
+    async function getCoordinates(address, token) {
+        const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(address)}.json?access_token=${token}`;
+        const res = await fetch(url);
+        const data = await res.json();
+        console.log(data);
+        
+        return data.features[0]?.center;
+    }
+
+    // Hàm gọi Mapbox Directions API để lấy khoảng cách giữa 2 tọa độ
+    async function getDistance(originCoord, destCoord, token) {
+        const url = `https://api.mapbox.com/directions/v5/mapbox/driving/${originCoord[0]},${originCoord[1]};${destCoord[0]},${destCoord[1]}?access_token=${token}`;
+        const res = await fetch(url);
+        const data = await res.json();
+        console.log(data);
+        
+        return data.routes[0]?.distance;
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
         generateSpecialTimeOptions();
         // Step control
@@ -336,23 +357,29 @@
                 reviewHtml = `<div>Pickup set for <strong>${document.querySelector('.pickup-time-option.active')?.textContent || document.getElementById('pickupTimeInput').value || document.getElementById('specialTimeSelect').value}</strong></div>
             <div>123 Main St, Prosper, TX</div>`;
             } else {
-                // Gọi API Google Maps Distance Matrix
-                const origin = 'Prosper, TX 75078';
-                const destination = document.getElementById('deliveryAddress').value;
-                const apiKey = 'YOUR_GOOGLE_MAPS_API_KEY'; // Thay bằng API key thật
-                const url = `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${encodeURIComponent(origin)}&destinations=${encodeURIComponent(destination)}&key=${apiKey}`;
+                // Gọi Mapbox API để tính khoảng cách
+                const mapboxToken = 'pk.eyJ1IjoidnVkYXQiLCJhIjoiY21nNWRsMmJyMDM3OTJrc2Fidm0xbGJ6bCJ9.T2j4DeckpSEQViFIJBS_8g'; // Thay bằng token của bạn
+                const originAddress = '1020 Ridgecrest Dr, McKinney, TX 75069';
+                const destinationAddress = "2460 Heathrow Ln, Prosper, TX 75078";
+                let distanceHtml = '';
                 try {
-                    const res = await fetch(url);
-                    const data = await res.json();
-                    if (data.rows && data.rows[0] && data.rows[0].elements[0].status === 'OK') {
-                        const distance = data.rows[0].elements[0].distance.text;
-                        distanceHtml = `<div>Distance: <strong>${distance}</strong></div>`;
+                    const originCoord = await getCoordinates(originAddress, mapboxToken);
+                    const destCoord = await getCoordinates(destinationAddress, mapboxToken);
+                    if (originCoord && destCoord) {
+                        const distance = await getDistance(originCoord, destCoord, mapboxToken);
+                        if (distance) {
+                            const mile = (distance / 1609.34).toFixed(2);
+                            distanceHtml = `<div>Distance: <strong>${mile} miles</strong></div>`;
+                        } else {
+                            distanceHtml = `<div>Distance: <span class='text-danger'>Không xác định</span></div>`;
+                        }
                     } else {
                         distanceHtml = `<div>Distance: <span class='text-danger'>Không xác định</span></div>`;
                     }
                 } catch (err) {
                     distanceHtml = `<div>Distance: <span class='text-danger'>Không xác định</span></div>`;
                 }
+                document.getElementById('distance').innerHTML = distanceHtml;
                 reviewHtml = `<div>Delivery set for <strong>${document.getElementById('deliveryAddress').value}</strong></div>
             <div>${document.getElementById('deliveryCityState').value}, ${document.getElementById('deliveryPostal').value}</div>
             <div>Time: <strong>${time}</strong></div>`;
