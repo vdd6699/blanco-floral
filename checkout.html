@@ -51,18 +51,22 @@
                             <div class="mb-3">
                                 <label for="firstName" class="form-label">First Name</label>
                                 <input type="text" class="form-control" id="firstName" required>
+                                <div class="invalid-feedback" id="firstNameError"></div>
                             </div>
                             <div class="mb-3">
                                 <label for="lastName" class="form-label">Last Name</label>
                                 <input type="text" class="form-control" id="lastName" required>
+                                <div class="invalid-feedback" id="lastNameError"></div>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="email" class="form-control" id="email" required>
+                                <div class="invalid-feedback" id="emailError"></div>
                             </div>
                             <div class="mb-3">
                                 <label for="phone" class="form-label">Phone Number</label>
                                 <input type="tel" class="form-control" id="phone" required>
+                                <div class="invalid-feedback" id="phoneError"></div>
                             </div>
                             <button class="btn btn-primary w-100" id="step1Continue">Save and Continue</button>
                         </div>
@@ -107,6 +111,7 @@
                                 <div class="mb-2">
                                     <label for="deliveryAddress" class="form-label">Address</label>
                                     <input type="text" class="form-control" id="deliveryAddress" required>
+                                    <div class="invalid-feedback" id="deliveryAddressError"></div>
                                 </div>
                                 <div class="mb-2">
                                     <label for="deliveryApt" class="form-label">Apartment, Suite, Unit, etc. <span
@@ -121,10 +126,12 @@
                                 <div class="mb-2">
                                     <label for="deliveryCityState" class="form-label">City, State</label>
                                     <input type="text" class="form-control" id="deliveryCityState" required>
+                                    <div class="invalid-feedback" id="deliveryCityStateError"></div>
                                 </div>
                                 <div class="mb-2">
                                     <label for="deliveryPostal" class="form-label">Postal Code</label>
                                     <input type="text" class="form-control" id="deliveryPostal" required>
+                                    <div class="invalid-feedback" id="deliveryPostalError"></div>
                                 </div>
 
                                 <div class="mb-3">
@@ -158,18 +165,22 @@
                             <div class="mb-3">
                                 <label for="receiveFirstName" class="form-label">First Name</label>
                                 <input type="text" class="form-control" id="receiveFirstName" required>
+                                <div class="invalid-feedback" id="receiveFirstNameError"></div>
                             </div>
                             <div class="mb-3">
                                 <label for="receiveLastName" class="form-label">Last Name</label>
                                 <input type="text" class="form-control" id="receiveLastName" required>
+                                <div class="invalid-feedback" id="receiveLastNameError"></div>
                             </div>
                             <div class="mb-3">
                                 <label for="receiveEmail" class="form-label">Email</label>
                                 <input type="email" class="form-control" id="receiveEmail" required>
+                                <div class="invalid-feedback" id="receiveEmailError"></div>
                             </div>
                             <div class="mb-3">
                                 <label for="receivePhone" class="form-label">Phone Number</label>
                                 <input type="tel" class="form-control" id="receivePhone" required>
+                                <div class="invalid-feedback" id="receivePhoneError"></div>
                             </div>
                             <button class="btn btn-primary w-100" id="step3Continue">Save and Continue</button>
                         </div>
@@ -307,10 +318,30 @@
         // Step 1 → Step 2
         step1Continue.addEventListener('click', function () {
             // Lấy dữ liệu step 1
-            const firstName = document.getElementById('firstName').value;
-            const lastName = document.getElementById('lastName').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            let hasError = false;
+            // Reset error
+            [
+                ['firstName', firstName],
+                ['lastName', lastName],
+                ['email', email],
+                ['phone', phone]
+            ].forEach(([id, val]) => {
+                const input = document.getElementById(id);
+                const errorDiv = document.getElementById(id + 'Error');
+                if (!val) {
+                    input.classList.add('is-invalid');
+                    errorDiv.textContent = 'Required';
+                    hasError = true;
+                } else {
+                    input.classList.remove('is-invalid');
+                    errorDiv.textContent = '';
+                }
+            });
+            if (hasError) return;
             // Hiển thị lại thông tin ở step 2
             step1Info.innerHTML = `<div class='mb-2'><strong>Your Info:</strong> ${firstName} ${lastName}, ${email}, ${phone}</div>`;
             step1.classList.add('d-none');
@@ -348,6 +379,52 @@
             const specialTimeSelect = document.getElementById('specialTimeSelect').value;
             time = pickupTimeInput ? pickupTimeInput : specialTimeSelect;
 
+            // Validate required fields for Pickup/Delivery
+            let hasError = false;
+            if (fulfillType === 'Pickup') {
+                if (!time) {
+                    // Hiện lỗi dưới input time
+                    const pickupTimeInput = document.getElementById('pickupTimeInput');
+                    pickupTimeInput.classList.add('is-invalid');
+                    pickupTimeInput.nextElementSibling && (pickupTimeInput.nextElementSibling.textContent = 'Vui lòng chọn thời gian nhận hàng.');
+                    hasError = true;
+                } else {
+                    document.getElementById('pickupTimeInput').classList.remove('is-invalid');
+                    document.getElementById('pickupTimeInput').nextElementSibling && (document.getElementById('pickupTimeInput').nextElementSibling.textContent = '');
+                }
+            } else {
+                // Validate các trường địa chỉ giao hàng
+                const deliveryAddress = document.getElementById('deliveryAddress').value.trim();
+                const deliveryCityState = document.getElementById('deliveryCityState').value.trim();
+                const deliveryPostal = document.getElementById('deliveryPostal').value.trim();
+                [
+                    ['deliveryAddress', deliveryAddress],
+                    ['deliveryCityState', deliveryCityState],
+                    ['deliveryPostal', deliveryPostal]
+                ].forEach(([id, val]) => {
+                    const input = document.getElementById(id);
+                    const errorDiv = document.getElementById(id + 'Error');
+                    if (!val) {
+                        input.classList.add('is-invalid');
+                        errorDiv.textContent = 'Required';
+                        hasError = true;
+                    } else {
+                        input.classList.remove('is-invalid');
+                        errorDiv.textContent = '';
+                    }
+                });
+                if (!time) {
+                    const pickupTimeInput = document.getElementById('pickupTimeInput');
+                    pickupTimeInput.classList.add('is-invalid');
+                    pickupTimeInput.nextElementSibling && (pickupTimeInput.nextElementSibling.textContent = 'Vui lòng chọn thời gian giao hàng.');
+                    hasError = true;
+                } else {
+                    document.getElementById('pickupTimeInput').classList.remove('is-invalid');
+                    document.getElementById('pickupTimeInput').nextElementSibling && (document.getElementById('pickupTimeInput').nextElementSibling.textContent = '');
+                }
+            }
+            if (hasError) return;
+
             step2Info.innerHTML = `<div class='mb-2'><strong>Fulfill:</strong> ${fulfillType} ${time ? ', Time: ' + time : ''}</div>`;
             step2.classList.add('d-none');
             step3.classList.remove('d-none');
@@ -360,7 +437,7 @@
                 // Gọi Mapbox API để tính khoảng cách
                 const mapboxToken = 'pk.eyJ1IjoidnVkYXQiLCJhIjoiY21nNWRsMmJyMDM3OTJrc2Fidm0xbGJ6bCJ9.T2j4DeckpSEQViFIJBS_8g'; // Thay bằng token của bạn
                 const originAddress = '1020 Ridgecrest Dr, McKinney, TX 75069';
-                const destinationAddress = "2460 Heathrow Ln, Prosper, TX 75078";
+                const destinationAddress = document.getElementById('deliveryAddress').value + ', ' + document.getElementById('deliveryCityState').value + ', ' + document.getElementById('deliveryPostal').value;
                 let distanceHtml = '';
                 try {
                     const originCoord = await getCoordinates(originAddress, mapboxToken);
@@ -391,17 +468,36 @@
         // Step 3 → Step 4
         step3Continue.addEventListener('click', function () {
             // Lấy dữ liệu step 3
-            const rFirstName = document.getElementById('receiveFirstName').value;
-            const rLastName = document.getElementById('receiveLastName').value;
-            const rEmail = document.getElementById('receiveEmail').value;
-            const rPhone = document.getElementById('receivePhone').value;
+            const rFirstName = document.getElementById('receiveFirstName').value.trim();
+            const rLastName = document.getElementById('receiveLastName').value.trim();
+            const rEmail = document.getElementById('receiveEmail').value.trim();
+            const rPhone = document.getElementById('receivePhone').value.trim();
+            let hasError = false;
+            [
+                ['receiveFirstName', rFirstName],
+                ['receiveLastName', rLastName],
+                ['receiveEmail', rEmail],
+                ['receivePhone', rPhone]
+            ].forEach(([id, val]) => {
+                const input = document.getElementById(id);
+                const errorDiv = document.getElementById(id + 'Error');
+                if (!val) {
+                    input.classList.add('is-invalid');
+                    errorDiv.textContent = 'Required';
+                    hasError = true;
+                } else {
+                    input.classList.remove('is-invalid');
+                    errorDiv.textContent = '';
+                }
+            });
+            if (hasError) return;
             step3Info.innerHTML = `<div class='mb-2'><strong>Receiver:</strong> ${rFirstName} ${rLastName}, ${rEmail}, ${rPhone}</div>`;
             step3.classList.add('d-none');
             step4.classList.remove('d-none');
             // Hiển thị review step 3
             document.getElementById('step3ReviewContent').innerHTML = `
-            <div><strong>${document.getElementById('receiveFirstName').value} ${document.getElementById('receiveLastName').value}</strong></div>
-            <div>We will contact ${document.getElementById('receivePhone').value} in case of delivery questions.</div>
+            <div><strong>${rFirstName} ${rLastName}</strong></div>
+            <div>We will contact ${rPhone} in case of delivery questions.</div>
         `;
             document.getElementById('step3Review').classList.remove('d-none');
         });
