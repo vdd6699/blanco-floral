@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+
 
     // Hiển thị nút See More nếu nội dung vượt quá 540px
     var aboutContent = document.querySelector('.about-us-content');
@@ -113,4 +113,3 @@ document.addEventListener('DOMContentLoaded', function() {
             section.appendChild(showLessBtn);
         }
     });
-});
