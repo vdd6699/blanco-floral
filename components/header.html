@@ -1,15 +1,21 @@
 <div class="header-top">
-    <div class="header-info">
+    <div class="header-info d-none d-md-block">
+
         <span>Blanco Floral</span><br>
         <span>Serving the Greater Prosper Area</span><br>
         <span>Prosper, TX 75078</span>
     </div>
-    <div class="header-logo">
+    <div class="d-md-none col-3">
+        <button class="btn btn-link" id="sidebarToggle" style="font-size:2rem;padding:0 10px 0 0;">
+            <i class="fa fa-bars"></i>
+        </button>
+    </div>
+    <div class="header-logocol-6">
         <img src="assets/blanco-logo.avif" alt="Blanco Floral Logo" height="200">
     </div>
-    <div class="header-account">
-        <div class="dropdown-account">
-            <a href="#" class="dropdown-toggle-account">MY ACCOUNT ▼</a>
+    <div class="header-account col-3">
+        <div class="dropdown-account header-info d-none d-md-block" <a href="#" class="dropdown-toggle-account">MY
+            ACCOUNT ▼</a>
             <ul class="dropdown-menu-account">
                 <li><a href="login.html"><img src="assets/icon-sign-out.svg" alt="Login"
                             style="height:19px;width:auto;vertical-align:middle;margin-right:6px;">Login</a></li>
@@ -26,7 +32,33 @@
         </a>
     </div>
 </div>
-<div class="header-main">
+<!-- Offcanvas sidebar for mobile -->
+<div class="offcanvas offcanvas-start d-md-none" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="mobileSidebarLabel">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <nav class="header-nav-mobile"><a href="/index.html">SHOP</a>
+            <div class="dropdown-order-online">
+                <a href="#" class="dropdown-toggle-order">
+                    ORDER ONLINE ▾
+                </a>
+                <ul class="dropdown-menu-order">
+                    <li><a href="/prosper-florist-flower-delivery.html/bouquet">Bouquet</a></li>
+                    <li><a href="/prosper-florist-flower-delivery.html/boxes">Boxes</a></li>
+                    <li><a href="/prosper-florist-flower-delivery.html/vase">Vase</a></li>
+                    <li><a href="/prosper-florist-flower-delivery.html/bridal-bouquet-collection">Bridal Bouquet
+                            Collection</a></li>
+                </ul>
+            </div>
+            <a href="#">WEDDINGS AND EVENTS</a>
+            <a href="#">ABOUT US</a>
+            <a href="#">SUBSCRIPTIONS</a>
+        </nav>
+    </div>
+</div>
+<div class="header-main d-none d-md-block">
     <nav class="header-nav">
         <a href="/index.html">SHOP</a>
         <div class="dropdown-order-online">
@@ -37,7 +69,8 @@
                 <li><a href="/prosper-florist-flower-delivery.html/bouquet">Bouquet</a></li>
                 <li><a href="/prosper-florist-flower-delivery.html/boxes">Boxes</a></li>
                 <li><a href="/prosper-florist-flower-delivery.html/vase">Vase</a></li>
-                <li><a href="/prosper-florist-flower-delivery.html/bridal-bouquet-collection">Bridal Bouquet Collection</a></li>
+                <li><a href="/prosper-florist-flower-delivery.html/bridal-bouquet-collection">Bridal Bouquet
+                        Collection</a></li>
             </ul>
         </div>
         <a href="#">WEDDINGS AND EVENTS</a>

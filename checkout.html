@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blanco Floral</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/detail.css">
@@ -516,7 +517,7 @@
 
         // Stripe Elements setup
         if (window.Stripe) {
-            var stripe = Stripe('pk_test_xxx'); // Thay bằng public key của bạn
+            var stripe = Stripe('pk_test_51SFbSaKehm2Fitdw89LbbNc1QxW0OQcjOQEatbBznGSlp4V0oIF79p6EyYrhx8HlYyGDN51R6pb3kfoWVIUtf1pX00KgK3rF7v'); // Thay bằng public key của bạn
             var elements = stripe.elements();
             var card = elements.create('card');
             card.mount('#card-element');
@@ -526,7 +527,7 @@
                 e.preventDefault();
                 paymentMessage.textContent = '';
                 // Gọi API backend để tạo PaymentIntent và lấy clientSecret
-                const res = await fetch('/create-payment-intent', { method: 'POST' });
+                const res = await fetch('http://localhost:4242/create-payment-intent', { method: 'POST' });
                 const data = await res.json();
                 const clientSecret = data.clientSecret;
                 const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {

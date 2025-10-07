@@ -1,3 +1,12 @@
+/* Banner main page image style */
+.main-banner-img {
+    display: block;
+    margin: 24px auto 0 auto;
+    max-width: 100%;
+    border-radius: 12px;
+    cursor: pointer;
+    height: 460px;
+}
 .dropdown-order-online {
     position: relative;
     display: inline-block;
@@ -302,6 +311,7 @@ body {
 .header-nav {
     margin-top: 18px;
     display: flex;
+    justify-self: center;
     gap: 38px;
     background: #fff;
     padding: 12px 0;
@@ -309,6 +319,15 @@ body {
 }
 
 
+.header-nav-mobile {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 12px 0;
+    border-radius: 8px;
+    row-gap: 24px;
+}
 .header {
     width: 100%;
     border-bottom: 1px solid #eee;
@@ -367,7 +386,7 @@ body {
 
 .header-account {
     display: flex;
-    align-items: center;
+    justify-content: center;
     font-size: 13px;
     color: #444;
     text-align: right;
@@ -1034,6 +1053,16 @@ form.menu-search button:hover {
         margin: 0.5em 0;
     }
 }
+
+@media (max-width: 767.98px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .main-banner-img {
+        height: 240px;
+    }
+}
+
 
 /* FOOTER SECTION */
 .site-footer {
