@@ -1,3 +1,30 @@
+/* Custom search bar styles for mobile and desktop */
+.menu-search {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-input {
+  flex: 1 1 0%;
+  min-width: 0;
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Mobile filter sidebar button */
+.filter-sidebar-btn {
+  border: 1px solid #282a2c;
+}
 /* Header row above pagination */
 .products-header-row {
   display: flex;
@@ -52,4 +79,22 @@
     font-weight: 200 !important;
     margin-bottom: 20px;
     padding-left: 5px;
+}
+
+@media (max-width: 768px) {
+  form.menu-search {
+    flex-direction: row;
+    align-items: center;
+  }
+  .form-input {
+    flex: 1 1 0%;
+    width: 100%;
+    padding-left: 32px
+  }
+  .search-btn {
+    margin-left: 8px;
+  }
+  .search-icon{
+    left: 5%;
+  }
 }

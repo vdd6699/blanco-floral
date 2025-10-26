@@ -37,8 +37,8 @@
     <main class="main-hero">
         <!-- ...existing code... -->
         <div class="container">
-            <div class="row">
-                <div class="col-6">
+            <div class="row flex-column-reverse flex-md-row">
+                <div class="col-12 col-md-6">
                     <!-- Form checkout 4 bước -->
                     <div id="checkout-steps">
                         <!-- Step 1 Review -->
@@ -198,7 +198,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6 d-flex flex-column justify-content-center product-checkout-summary">
+                <div class="col-12 col-md-6 d-flex flex-column justify-content-center product-checkout-summary">
                     <h2 class="product-title mb-3">Order Summary</h2>
                     <!-- Phần 1: Danh sách sản phẩm -->
                     <div class="checkout-products mb-3">
@@ -236,8 +236,12 @@
                             <span>$10.00</span>
                         </div>
                         <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span>Shipping fee</span>
+                            <span id="shippingFee">$00.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
                             <span>Tip</span>
-                            <span>$5.00</span>
+                            <span id="tip">$5.00</span>
                         </div>
                         <div class="d-flex justify-content-between align-items-center border-top pt-2">
                             <span class="fw-bold">Grand Total</span>
@@ -439,23 +443,26 @@
                 const mapboxToken = 'pk.eyJ1IjoidnVkYXQiLCJhIjoiY21nNWRsMmJyMDM3OTJrc2Fidm0xbGJ6bCJ9.T2j4DeckpSEQViFIJBS_8g'; // Thay bằng token của bạn
                 const originAddress = '1020 Ridgecrest Dr, McKinney, TX 75069';
                 const destinationAddress = document.getElementById('deliveryAddress').value + ', ' + document.getElementById('deliveryCityState').value + ', ' + document.getElementById('deliveryPostal').value;
-                let distanceHtml = '';
+                let shippingFee = '';
                 try {
                     const originCoord = await getCoordinates(originAddress, mapboxToken);
                     const destCoord = await getCoordinates(destinationAddress, mapboxToken);
                     if (originCoord && destCoord) {
                         const distance = await getDistance(originCoord, destCoord, mapboxToken);
                         if (distance) {
-                            const mile = (distance / 1609.34).toFixed(2);
-                            distanceHtml = `<div>Distance: <strong>${mile} miles</strong></div>`;
+                            const mile = (distance / 1609.34);
+                            const mileFixed = mile.toFixed(2);
+                            // Tính shipping fee
+                            const shipping = (mile * 0.5).toFixed(2);
+                            document.getElementById('shippingFee').textContent = `$${shipping}`;
                         } else {
-                            distanceHtml = `<div>Distance: <span class='text-danger'>Không xác định</span></div>`;
+                            document.getElementById('shippingFee').textContent = '$0.00';
                         }
                     } else {
-                        distanceHtml = `<div>Distance: <span class='text-danger'>Không xác định</span></div>`;
+                        document.getElementById('shippingFee').textContent = '$0.00';
                     }
                 } catch (err) {
-                    distanceHtml = `<div>Distance: <span class='text-danger'>Không xác định</span></div>`;
+                    document.getElementById('shippingFee').textContent = '$0.00';
                 }
                 document.getElementById('distance').innerHTML = distanceHtml;
                 reviewHtml = `<div>Delivery set for <strong>${document.getElementById('deliveryAddress').value}</strong></div>
@@ -517,7 +524,7 @@
 
         // Stripe Elements setup
         if (window.Stripe) {
-            var stripe = Stripe('pk_test_51SFbSaKehm2Fitdw89LbbNc1QxW0OQcjOQEatbBznGSlp4V0oIF79p6EyYrhx8HlYyGDN51R6pb3kfoWVIUtf1pX00KgK3rF7v'); // Thay bằng public key của bạn
+            var stripe = Stripe('pk_live_51SFzcfGdc9UamR9hcEZcDThKGlEU099FN9PFIdnQFBIIsbH23IhVME3RHKiUjohJA6mkhI37UHVW6tC2lbWT9vUq00Ea9ImjMw'); // Thay bằng public key của bạn
             var elements = stripe.elements();
             var card = elements.create('card');
             card.mount('#card-element');
@@ -534,9 +541,10 @@
                     payment_method: { card: card }
                 });
                 if (error) {
-                    paymentMessage.textContent = error.message;
+                    // Redirect to error page with message
+                    window.location.href = 'error.html';
                 } else if (paymentIntent && paymentIntent.status === 'succeeded') {
-                    paymentMessage.textContent = 'Thanh toán thành công!';
+                    window.location.href = 'success.html';
                 }
             });
         }
